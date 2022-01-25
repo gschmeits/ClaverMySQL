@@ -1,0 +1,115 @@
+﻿<Window x:Class="ClaverMySQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Zusters St. Petus Claver - Maastricht"
+        Width="1024"
+        Height="768"
+        Icon="logo.ico"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu Height="24"
+                  BorderBrush="Black"
+                  BorderThickness="0,0,0,0"
+                  DockPanel.Dock="Top" VerticalContentAlignment="Center">
+                <MenuItem Header="Stamgegevens">
+                    <!--
+                    <MenuItem Name="MenuItemBankafscriten"
+                              Header="Inlezen bankafschriten"
+                              Click="MenuItemBankafscriten_Click" />
+                    <Separator  />
+                    -->
+                    <MenuItem Name="mnu_Stamgegevens_Adressen"
+                              Click="mnu_Stamgegevens_Adressen_Click"
+                              Header="Adressen" />
+                    <Separator />
+                    <MenuItem Name="mnu_Stamgegevens_Grootboekrekeningen"
+                              Click="mnu_Stamgegevens_Grootboekrekeningen_Click"
+                              Header="Grootboekrekeningen" />
+                    <MenuItem Name="mnu_Stamgegevens_Sub_codes"
+                              Click="mnu_Stamgegevens_Sub_codes_Click"
+                              Header="Sub codes" />
+                    <Separator />
+
+                    <MenuItem Name="mnu_Stamgegevens_Einde"
+                              Click="mnu_Stamgegevens_Einde_Click"
+                              Header="Einde" />
+                </MenuItem>
+                <MenuItem Header="_Boekhouding">
+                    <MenuItem Name="mnu_Boekhouding_Boeken"
+                              Click="mnu_Boekhouding_Boeken_Click"
+                              Header="Boeken" />
+                    <Separator />
+                    <MenuItem Name="mnu_Boekhouding_Controle"
+                              Header="Controle">
+                        <MenuItem Name="mnu_BoekhoudingControleDetail" Header="Details"
+                                  Click="mnu_Boekhouding_Controle_Click" />
+                        <MenuItem Name="mnu_BoekhoudingControlePerRekening" Header="Per Kostenplaats"
+                                  Click="Mnu_BoekhoudingControlePerRekening_OnClick" />
+                        <MenuItem Name="mnu_BoekhoudingControleGrootboek" Header="Per grootboek"
+                                  Click="Mnu_BoekhoudingControleGrootboek_Click" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Overzichten">
+                    <MenuItem Header="Maandoverzichten" Name="mnu_Overzichten_Maandoverzichten"
+                              Click="mnu_Overzichten_Maandoverzichten_Click" />
+                    <Separator />
+                    <MenuItem Name="mnu_Overzichten_PerPersoon"
+                              Click="mnu_Overzichten_PerPersoon_Click"
+                              Header="Per Persoon" />
+                    <Separator />
+                    <MenuItem Header="Aantallen">
+                        <MenuItem Name="mnu_Overzichten_Aantallen_Abonnementen"
+                                  Click="mnu_Overzichten_Aantallen_Abonnementen_Click"
+                                  Header="Abonnementen" />
+                        <MenuItem Name="mnu_Overzichten_Aantallen_EchoUitAfrika"
+                                  Click="mnu_Overzichten_Aantallen_EchoUitAfrika_Click"
+                                  Header="Echo uit Afrika" />
+                        <MenuItem Name="_mnu_Overzichen_Aantallen_Kalender"
+                                  Click="_mnu_Overzichen_Aantallen_Kalender_Click"
+                                  Header="Kalender" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Printen">
+                    <MenuItem Name="mnu_Printen_Acceptgiro"
+                              Click="mnu_Printen_Acceptgiro_Click"
+                              Header="Acceptgiro" />
+                    <MenuItem Header="Dank">
+                        <MenuItem Name="_mnu_Printen_Dank_Globaal"
+                                  Click="_mnu_Printen_Dank_Globaal_Click"
+                                  Header="Globaal" />
+                        <MenuItem Name="_mnu_Printen_Dank_Individueel"
+                                  Click="_mnu_Printen_Dank_Individueel_Click"
+                                  Header="Individueel" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Extra">
+                    <MenuItem Name="extraInstellingen"
+                              Click="extraInstellingen_Click"
+                              Header="Instellingen" />
+                    <Separator />
+                    <MenuItem Name="mnu_Extra_SaldiAanpassen"
+                              Click="mnu_Extra_SaldiAanpassen_Click"
+                              Header="Saldi aanpassing" />
+                    <MenuItem Name="_mnu_Extra_NietBetalenden"
+                              Click="_mnu_Extra_NietBetalenden_Click"
+                              Header="Niet betalenden" />
+                    <Separator />
+                    <MenuItem Name="mnu_Extra_Email"
+                              Header="Email templates" Click="Mnu_Extra_Email_Click" />
+                    <Separator />
+                    <MenuItem Header="Beginscherm"
+                              Name="beginscherm"
+                              Click="beginscherm_Click" />
+                </MenuItem>
+
+            </Menu>
+            <Frame Name="frame1"
+                   DockPanel.Dock="Bottom"
+                   NavigationUIVisibility="Hidden" />
+        </DockPanel>
+    </Grid>
+</Window>

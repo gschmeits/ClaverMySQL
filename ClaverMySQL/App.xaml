@@ -1,0 +1,118 @@
+﻿<Application x:Class="ClaverMySQL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ClaverMySQL"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resourses/RDPetrusClaver.xaml"/>
+                <ResourceDictionary Source="Resourses/ResourceDirectory.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="achtergrondkleur" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#7F3C74C4" />
+                <GradientStop Color="#7F3C74C4" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="achtergrond" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00DCFF" Offset="0" />
+                <GradientStop Color="#FFFFF300" Offset="1" />
+            </LinearGradientBrush>
+            <Style x:Key="Koptekst" TargetType="{x:Type Label}">
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontFamily" Value="Lucida Calligraphy" />
+                <Setter Property="FontSize" Value="36" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="BorderaStyleG" TargetType="{x:Type Border}">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="LightGray" />
+                <Setter Property="Margin" Value="15,5,15,5" />
+                <Setter Property="CornerRadius" Value="4" />
+            </Style>
+
+            <Style x:Key="ComboBoxTextBoxStyle" TargetType="{x:Type TextBox}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Grid>
+                                <Border Name="ComboBoxTextBoxStyleBorder" CornerRadius="4" BorderThickness="0,1,0,1" Margin="0,0,1,1" Background="{TemplateBinding Background}">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Background" Value="White" />
+                                                </Trigger>
+
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="IsReadOnly" Value="True" />
+            </Style>
+
+            <!--Rounded corners combo box-->
+            <Style TargetType="{x:Type ComboBox}" x:Key="roundedCornersComboBox">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBox}">
+                            <Border Name="roundedCornerComboBoxBorder" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="3" ClipToBounds="True" Background="White">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Canvas>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Name="PART_EditableTextBox" Panel.ZIndex="0" Style="{StaticResource ComboBoxTextBoxStyle}" Padding="0,0,0,0" IsHitTestVisible="False" Height="{TemplateBinding Height}">
+                                        </TextBox>
+                                        <ToggleButton Grid.Column="1" Margin="0, 0, 0, 0" Panel.ZIndex="1" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Height="{TemplateBinding Height}" Width="60" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="Right" ClickMode="Press">
+
+                                            <ToggleButton.Style>
+                                                <Style TargetType="ToggleButton">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="true">
+                                                            <Setter Property="Background" Value="White" />
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ToggleButton.Style>
+
+                                            <Path Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Fill="DodgerBlue" />
+                                        </ToggleButton>
+                                        <ContentPresenter Name="ContentSite" Cursor="Arrow" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3,0,0,0">
+                                        </ContentPresenter>
+                                        <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                            <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                <Border x:Name="DropDownBorder" BorderThickness="1" CornerRadius="5" Background="White" BorderBrush="Black" />
+                                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Popup>
+                                    </Grid>
+                                </Canvas>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

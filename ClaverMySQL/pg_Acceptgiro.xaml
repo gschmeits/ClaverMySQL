@@ -1,0 +1,211 @@
+﻿<Page x:Class="ClaverMySQL.pg_Acceptgiro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClaverMySQL"
+      mc:Ignorable="d" 
+      d:DesignHeight="737" d:DesignWidth="1016"
+      Title="pg_Acceptgiro" Background="AliceBlue">
+    <Grid Background="{DynamicResource achtergrondkleur}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <Label Grid.ColumnSpan="2"
+               Width="1005"
+               Height="46"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalContentAlignment="Center"
+               Content="CSV-bestand aanmaken voor de acceptgiro's"
+               FontFamily="Lucida Calligraphy"
+               FontSize="24"
+               FontWeight="Bold" />
+        <Border Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Margin="5,5,5,5"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="4" />
+        <GroupBox Grid.Row="1"
+                  Margin="5,5,5,5"
+                  HorizontalAlignment="Stretch"
+                  Header="Selecter Code" />
+        <StackPanel Grid.Row="1"
+                    Margin="5,5,5,5"
+                    HorizontalAlignment="Stretch"
+                    Orientation="Horizontal">
+            <Label Margin="15,0,15,0"
+                   VerticalAlignment="Center"
+                   Content="Code:" />
+            <ComboBox Name="cmbCode"
+                      Width="246"
+                      Height="24"
+                      Margin="0,42,0,43"
+                      GotFocus="cmbCode_GotFocus"
+                      IsEditable="True"
+                      ItemsSource="{Binding}" />
+        </StackPanel>
+        <GroupBox Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="5,5,5,5"
+                  HorizontalAlignment="Stretch"
+                  Header="Opties" />
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="15,25,15,15"
+                    Orientation="Vertical">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <CheckBox Name="optA"
+                          Margin="15,15, 40,15"
+                          Content="A" />
+                <CheckBox Name="optA2"
+                          Margin="15,15,40,15"
+                          Content="A2" />
+                <CheckBox Name="optA3"
+                          Margin="15,15,40,15"
+                          Content="A3" />
+                <CheckBox Name="optA4"
+                          Margin="15,15,40,15"
+                          Content="A4" />
+                <CheckBox Name="optA5"
+                          Margin="15,15,40,15"
+                          Content="A5" />
+                <CheckBox Name="optA6"
+                          Margin="15,15,40,15"
+                          Content="A6" />
+                <CheckBox Name="optA7"
+                          Margin="15,15,15,15"
+                          Content="A7" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <CheckBox Name="optW1"
+                          Margin="15,15, 40,15"
+                          Content="W1" />
+                <CheckBox Name="optW"
+                          Margin="15,15,40,15"
+                          Content="W" />
+                <CheckBox Name="optD1"
+                          Margin="15,15,40,15"
+                          Content="D1" />
+                <CheckBox Name="optD"
+                          Margin="15,15,40,15"
+                          Content="D" />
+            </StackPanel>
+        </StackPanel>
+        <GroupBox Grid.Row="2"
+                  Margin="5,5,5,5"
+                  HorizontalAlignment="Stretch"
+                  Header="Sorteren op" />
+        <StackPanel Grid.Row="2"
+                    Margin="25,25,25,25"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+            <RadioButton Name="optPostcode"
+                         Margin="0,15"
+                         Content="Postcode en huisnummer"
+                         IsChecked="True" />
+            <RadioButton Name="optNaam" Content="Naam" />
+        </StackPanel>
+        <GroupBox Grid.Row="2"
+                  Grid.RowSpan="3"
+                  Grid.Column="1"
+                  Margin="5,5,5,5"
+                  HorizontalAlignment="Stretch"
+                  Header="Tekst" />
+        <Grid Grid.Row="2"
+              Grid.RowSpan="3"
+              Grid.Column="1"
+              Margin="15,15,15,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="6*" />
+            </Grid.RowDefinitions>
+
+            <Label Margin="15,0"
+                   VerticalAlignment="Bottom"
+                   HorizontalContentAlignment="Left"
+                   Content="Tekst aan de bovenkant van de acceptgiro 1e regel:"
+                   FontWeight="Bold" />
+            <TextBox Name="txtBoven"
+                     Grid.Row="1"
+                     Height="24"
+                     Margin="15,8"
+                     VerticalContentAlignment="Center" />
+            <Label Grid.Row="2"
+                   Margin="15,0"
+                   VerticalAlignment="Bottom"
+                   Content="Tekst aan de bovenkant van de acceptgiro 2e regel:"
+                   FontWeight="Bold" />
+            <TextBox Name="txtBoven1"
+                     Grid.Row="3"
+                     Height="24"
+                     Margin="15,8"
+                     VerticalContentAlignment="Center" />
+            <Label Grid.Row="4"
+                   Margin="15,0"
+                   VerticalAlignment="Bottom"
+                   Content="Tekst aan de linkerkant van de acceptgiro:"
+                   FontWeight="Bold" />
+            <TextBox Name="txtLinks"
+                     Grid.Row="5"
+                     Margin="15,0,15,10"
+                     VerticalScrollBarVisibility="Auto" />
+        </Grid>
+        <RadioButton Name="optAccept"
+                     Grid.Row="3"
+                     Content="Acceptgiro"
+                     IsChecked="True"
+                     Visibility="Hidden" />
+
+        <GroupBox Grid.Row="4"
+                  Margin="5,5,5,5"
+                  HorizontalAlignment="Stretch"
+                  Header="Aanmaken CSV-bestand" />
+        <Button Name="btnCSV"
+                Grid.Row="4"
+                Height="96"
+                Margin="25,40"
+                VerticalAlignment="Top"
+                Background="#FFDDDDDD"
+                Click="btnCSV_Click"
+                Content="Aanmaken CSV-bestand"
+                Style="{DynamicResource MyButtonStyle}" />
+        <Label Name="lblOgenblik"
+               Grid.Row="4"
+               Height="32"
+               Margin="25,149,25,57"
+               VerticalContentAlignment="Bottom"
+               Content="Een ogenblikje a.u.b. ..."
+               Visibility="Hidden" />
+        <Grid Name="gridP"
+              Grid.Row="4"
+              Height="32"
+              Margin="25"
+              VerticalAlignment="Bottom"
+              Visibility="Hidden">
+            <ProgressBar Name="pbStatus"
+                         Maximum="100"
+                         Minimum="0" />
+            <TextBlock Name="percentage"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{Binding ElementName=pbStatus,
+                                      Path=Value,
+                                      StringFormat={}{0:0}%}" />
+        </Grid>
+    </Grid>
+</Page>

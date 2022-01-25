@@ -1,0 +1,108 @@
+﻿<Page x:Class="ClaverMySQL.pg_SubCodes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="737" d:DesignWidth="1016"
+      Title="pg_SubCodes" ShowsNavigationUI="False" Background="#FFFCFCFC" Loaded="Page_Loaded">
+    <Grid Background="{DynamicResource achtergrondkleur}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="0"
+                    Grid.ColumnSpan="4" />
+            <Label Content="Rekeningnummer" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Right" />
+            <ComboBox Name="cmbRekening" HorizontalAlignment="Left" Grid.Column="1" Height="24" Margin="5,0,0,0"
+                      Width="55" DropDownClosed="cmbRekening_DropDownClosed">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+
+            <Label Content="Subcode omschrijving" VerticalAlignment="Center" Grid.Column="2"
+                   HorizontalAlignment="Right" Margin="0,24,10,25" />
+            <ComboBox Name="cmbSubcode" HorizontalAlignment="Left" Grid.Column="3" Height="24" Margin="0,26,0,25"
+                      Width="173" DropDownClosed="cmbSubcode_DropDownClosed">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,0,15,5" CornerRadius="4" Grid.Row="1"
+                Grid.ColumnSpan="2" />
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Content="Grootboekrekening" VerticalAlignment="Center" HorizontalAlignment="Right"
+                   Margin="0,0,5,0" />
+            <Label Grid.Row="1" Content="Subcode omschrijving" VerticalAlignment="Center" HorizontalAlignment="Right"
+                   Margin="0,0,5,0" />
+            <Label Grid.Row="2" Content="Rijnummer" VerticalAlignment="Center" HorizontalAlignment="Right"
+                   Margin="0,0,5,0" />
+            <TextBox Name="txtIDLCode" Height="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                     HorizontalAlignment="Left" Margin="120,12,0,14" Width="75" Visibility="Hidden"
+                     VerticalContentAlignment="Center" />
+            <TextBox Name="txtGrootboek" Height="24" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center "
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" Width="75" />
+            <TextBox Name="txtSubCode" Height="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                     HorizontalAlignment="Left" Margin="5,0,0,0" Width="350" VerticalContentAlignment="Center" />
+            <TextBox Name="txtRij" Height="24" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+                     HorizontalAlignment="Left" Margin="5,0,0,0" Width="50" VerticalContentAlignment="Center" />
+            <Grid Grid.Row="1" Grid.Column="1" Width="108" Margin="358,0,0,0" Grid.RowSpan="2">
+                <Button Name="btnNieuw" HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36"
+                        Click="btnNieuw_Click" IsEnabled="False">
+                    <TextBlock FontSize="18" Text="+" />
+                </Button>
+                <Button Name="btnOpslaan" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Width="36" Height="36" Click="btnOpslaan_Click" Margin="0,7">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/Save_6530_32.bmp" Stretch="Uniform" />
+                    </Button.Background>
+                    <Button.Foreground>
+                        <ImageBrush ImageSource="Images/Save_6530_32.bmp" Stretch="Uniform" />
+                    </Button.Foreground>
+                </Button>
+            </Grid>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,10,15,10" CornerRadius="4" Grid.Row="2"
+                Grid.ColumnSpan="2" />
+        <DataGrid Name="dgSubcode" Grid.Row="2" Grid.ColumnSpan="2" Margin="50,25,50,25" Width="550"
+                  AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False"
+                  CanUserResizeRows="False" CanUserSortColumns="False" IsHitTestVisible="True"
+                  IsSynchronizedWithCurrentItem="True" IsReadOnly="True" MouseDoubleClick="dgSubcode_MouseDoubleClick"
+                  AlternatingRowBackground="{DynamicResource DataGridAchtergrondAlternatief}"
+                  Background="{DynamicResource DataGridAchtergrond}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Visibility="Visible" Binding="{Binding idlcode}" />
+                <DataGridTextColumn Header="Grootboekrekening" Width="150" Binding="{Binding rekeningnummer}" />
+                <DataGridTextColumn Header="Omschrijving" Width="300" Binding="{Binding sumoms}" />
+                <DataGridTextColumn Header="Rijnummer" Width="75" Binding="{Binding rij}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

@@ -1,0 +1,438 @@
+﻿<Page x:Class="ClaverMySQL.pg_Boekhouding"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="737" d:DesignWidth="1016"
+      Title="pg_Boekhouding" ShowsNavigationUI="False" Background="AliceBlue" Loaded="Page_Loaded">
+    <Grid Background="{DynamicResource achtergrondkleur}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="300" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!-- Boekmaandselectie -->
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="0"
+                Grid.ColumnSpan="2" />
+        <StackPanel Orientation="Horizontal" Margin="20,5">
+            <Label Content="Boekjaar:" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" />
+            <ComboBox x:Name="cmbBoekjaar" Width="70" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                      Margin="0,9" DropDownClosed="cmbBoekjaar_DropDownClosed" GotFocus="cmbBoekjaar_GotFocus"
+                      TabIndex="1">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <Label Content="Boekmaand:" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,7"
+                   FontWeight="Bold" TabIndex="1" />
+            <ComboBox x:Name="cmbBoekmaand" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="64"
+                      Height="24" Margin="0,8" DropDownClosed="cmbBoekmaand_DropDownClosed"
+                      GotFocus="cmbBoekmaand_GotFocus" TabIndex="2" VerticalAlignment="Center"
+                      VerticalContentAlignment="Center">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock TextAlignment="Right" Text="{Binding maand}" Width="25" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Margin="0,0,50,0"
+                    Name="StackPanelAantalBedankjes"
+                    Visibility="Hidden">
+            <Label Content="Aantal bedankjes:" FontWeight="Bold" />
+            <TextBlock Name="TextBlockAantalBedankjes"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Text="0" />
+        </StackPanel>
+        <!-- Einde Boekmaandselectie -->
+
+        <!-- Bankselectie -->
+        <Border BorderThickness="1" 
+                BorderBrush="LightGray" Margin="15,0" 
+                CornerRadius="4" Grid.Row="1"
+                Grid.ColumnSpan="2" IsHitTestVisible="False" />
+        <DockPanel Name="docBankSel" 
+                   Margin="15,5,15,5" 
+                   Grid.Row="1" Grid.ColumnSpan="2" 
+                   Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1.6*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1.6*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Bank:" VerticalContentAlignment="Bottom" Margin="0,-11,0,0" Visibility="Visible"
+                       FontWeight="Bold" />
+                <Label Name="lblDatum" Content="Datum:" VerticalContentAlignment="Bottom" Grid.Column="1"
+                       Margin="0,-11,0,0" Visibility="Hidden" FontWeight="Bold" />
+                <Label Name="lblVolgnummer" Content="Volgnummer:" VerticalContentAlignment="Bottom" Grid.Column="2"
+                       Margin="0,-9,0,0" Visibility="Hidden" FontWeight="Bold" />
+                <Label Name="lblBeginSaldo" Content="Beginsaldo:" VerticalContentAlignment="Bottom" Grid.Column="3"
+                       Margin="0,-11,0,0" Visibility="Hidden" FontWeight="Bold" />
+                <Label Name="lblEindSaldo" Content="Eindsaldo:" VerticalContentAlignment="Bottom" Grid.Column="4"
+                       Margin="0,-9,0,0" Visibility="Hidden" FontWeight="Bold" />
+                <Label Name="lblNogTeBoeken" Content="Te boeken:" HorizontalContentAlignment="Right"
+                       VerticalContentAlignment="Bottom" Grid.Column="5" Margin="0,-9,0,0" Visibility="Hidden"
+                       FontWeight="Bold" />
+                <StackPanel Name="spGeboekt" Orientation="Horizontal" Grid.Column="6" Margin="0,-9,0,0"
+                            Visibility="Hidden">
+                    <Label Content="Geboekt:" HorizontalAlignment="Left" VerticalContentAlignment="Bottom" Width="100"
+                           FontWeight="Bold" />
+                    <Label x:Name="lblGeboekt" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                           Content="€ 0,00" Width="92" />
+                </StackPanel>
+                <StackPanel Name="spNogBoeken" Orientation="Horizontal" Grid.Column="6" Grid.Row="2" Margin="0,-9,0,0"
+                            Visibility="Hidden">
+                    <Label Content="Nog te boeken:" VerticalContentAlignment="Bottom" Width="100"
+                           Margin="0,-9,0,0" FontWeight="Bold" />
+                    <Label x:Name="lblNogBoeken" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
+                           Content="€ 0,00" Width="92" />
+                </StackPanel>
+                <ComboBox Name="cmbBank" Grid.Row="1" 
+                          Margin="5,0" 
+                          TabIndex="3" VerticalAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          DropDownClosed="cmbBank_DropDownClosed"
+                          IsVisibleChanged="cmbBank_IsVisibleChanged"
+                          GotFocus="cmbBank_GotFocus" Height="24">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding BankOms}" Width="100"
+                                           TextSearch.TextPath="{Binding ean_upc}" />
+                                <TextBlock Text="{Binding Nummer}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <DatePicker Name="dpDatum" Grid.Column="1" HorizontalAlignment="Left"
+                            Margin="5,0,0,0" Grid.Row="1" TabIndex="4"
+                            IsTabStop="True" IsDropDownOpen="False" Visibility="Visible"
+                            VerticalContentAlignment="Center"
+                            SelectedDateChanged="dpDatum_SelectedDateChanged"
+                            KeyDown="dpDatum_KeyDown"
+                            PreviewKeyDown="dpDatum_PreviewKeyDown"
+                            DataContextChanged="dpDatum_DataContextChanged"
+                            Width="154" Height="26" VerticalAlignment="Center" BorderBrush="Gray"
+                            MouseDown="DpDatum_MouseDown" PreviewMouseDown="DpDatum_PreviewMouseDown" IsEnabled="False"
+                            GotFocus="DpDatum_GotFocus">
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <EventSetter Event="MouseLeftButtonUp" Handler="OnMouseLeftButtonUp" />
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <Calendar x:Name="Kalender" Grid.ColumnSpan="3"
+                          Margin="191,2,76,-112" Grid.RowSpan="2" Visibility="Hidden"
+                          MouseDoubleClick="Kalender_MouseDoubleClick" VerticalAlignment="Top"
+                          GotFocus="Kalender_GotFocus" IsVisibleChanged="Kalender_IsVisibleChanged" Grid.Row="1" />
+
+                <TextBox Name="txtVolgnummer" Grid.Row="1" Grid.Column="2" Margin="5,0" TabIndex="5"
+                         GotFocus="txtVolgnummer_GotFocus" Visibility="Hidden" VerticalAlignment="Center"
+                         VerticalContentAlignment="Center" IsVisibleChanged="txtVolgnummer_IsVisibleChanged"
+                         Height="24" />
+                <TextBox Name="txtBeginSaldo" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Margin="5,0"
+                         TabIndex="5" TextAlignment="Right" Text="€ 0,00" GotFocus="txtBeginSaldo_GotFocus"
+                         Visibility="Hidden" GotKeyboardFocus="txtBeginSaldo_GotKeyboardFocus"
+                         GotMouseCapture="txtBeginSaldo_GotMouseCapture" KeyDown="txtBeginSaldo_KeyDown"
+                         LostFocus="txtBeginSaldo_LostFocus" PreviewKeyDown="txtBeginSaldo_PreviewKeyDown" Height="24"
+                         VerticalContentAlignment="Center" />
+                <TextBox Name="txtEindSaldo" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="1"
+                         Grid.Column="4" Margin="5,0" TabIndex="6" TextAlignment="Right" Text="€ 0,00"
+                         GotFocus="txtEindSaldo_GotFocus" Visibility="Hidden"
+                         GotKeyboardFocus="txtEindSaldo_GotKeyboardFocus"
+                         GotMouseCapture="txtEindSaldo_GotMouseCapture" KeyDown="txtEindSaldo_KeyDown"
+                         LostFocus="txtEindSaldo_LostFocus" PreviewKeyDown="txtEindSaldo_PreviewKeyDown" Height="24" />
+                <Label Name="lblTeBoeken" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="5"
+                       Margin="5,18,0,0" HorizontalContentAlignment="Right" Content="€ 0,00" Grid.RowSpan="2"
+                       Visibility="Hidden" />
+
+            </Grid>
+        </DockPanel>
+        <!-- Einde Bankselectie -->
+
+        <!-- Boeking -->
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="2"
+                Grid.ColumnSpan="2" />
+        <DockPanel Name="docDdetails" Margin="15,5,15,5" Grid.Row="2" Grid.ColumnSpan="2"
+                   Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1.5*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="113*" />
+                    <ColumnDefinition Width="359*" />
+                    <ColumnDefinition Width="11" />
+                    <ColumnDefinition Width="503*" />
+                </Grid.ColumnDefinitions>
+                <TextBox Name="txtID" Text="0" Visibility="Hidden" />
+                <TextBox Name="txtBedrag1" Text="0" Visibility="Hidden" />
+                <Label Content="Blad" FontWeight="Bold" Margin="5" HorizontalContentAlignment="Right"
+                       VerticalContentAlignment="Center" Visibility="Visible" />
+                <Label Content="Code" FontWeight="Bold" Margin="5"
+                       Grid.Row="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                       Visibility="Visible" />
+                <Label Content="Bedrag" FontWeight="Bold" Margin="5,0" Grid.Row="2" HorizontalContentAlignment="Right"
+                       VerticalContentAlignment="Center" Visibility="Visible" />
+                <Label Content="Naam betaler" FontWeight="Bold" Name="lblNaamBetaler" Margin="5,8,0,7" Grid.Row="3"
+                       HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Visibility="Hidden" />
+                <Label Content="Omschrijving" FontWeight="Bold" Margin="5,0,0,0" Grid.Row="4"
+                       HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Visibility="Visible" />
+                <Label Content="Opmerking" FontWeight="Bold" Margin="5" Grid.Row="5" HorizontalContentAlignment="Right"
+                       VerticalContentAlignment="Center" Visibility="Visible" />
+                <Label Content="Dank" FontWeight="Bold" Name="lblDank" Margin="5" Grid.Row="6"
+                       HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Visibility="Hidden" />
+                <!-- Code dropdown options -->
+                <ComboBox Name="cmbCode" Grid.Row="1" Grid.Column="1" Margin="5,0" Height="24"
+                          VerticalAlignment="Center"
+                          VerticalContentAlignment="Center" IsEditable="True" PreviewKeyDown="cmbCode_PreviewKeyDown"
+                          LostFocus="cmbCode_LostFocus" Visibility="Visible"
+                          DataContextChanged="cmbCode_DataContextChanged"
+                          TabIndex="8">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <!-- Code dropdown options -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtBlad" Text="01" Width="40" 
+                             Margin="5,0,0,0" Height="24"
+                             VerticalAlignment="Center" 
+                             VerticalContentAlignment="Center" Visibility="Visible"
+                             KeyDown="txtBlad_KeyDown" GotFocus="txtBlad_GotFocus" TabIndex="7" />
+                    <Label Name="lblSubCode" Content="Subcode" HorizontalContentAlignment="Right" Width="60"
+                           Margin="5,0,0,0" VerticalContentAlignment="Center" Visibility="Hidden" />
+                    <!-- Subcode -->
+                    <ComboBox Name="cmbSubdoe" Width="150" 
+                              Margin="5" Height="24" Visibility="Hidden"
+                              VerticalContentAlignment="Center" 
+                              DropDownClosed="cmbSubdoe_DropDownClosed"
+                              LostFocus="cmbSubdoe_LostFocus" TabIndex="9" />
+                    <!-- Einde Subcode -->
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtBedrag" VerticalAlignment="Center" Height="24" VerticalContentAlignment="Center"
+                             Margin="5,0,0,0" HorizontalContentAlignment="Right" Width="75" Text="€ 0,00"
+                             GotFocus="txtBedrag_GotFocus" Visibility="Visible" KeyDown="txtBedrag_KeyDown"
+                             LostFocus="txtBedrag_LostFocus" PreviewKeyDown="txtBedrag_PreviewKeyDown" TabIndex="10" />
+                </StackPanel>
+                <TextBox Name="txtNaambetaler" Height="24" Grid.Row="3" Grid.Column="1" Margin="5,8,0,7"
+                         VerticalAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden" TabIndex="11" />
+                <TextBox Name="txtOmschrijving" Grid.Row="4" Grid.Column="1" Margin="5,8,0,7"
+                         VerticalAlignment="Center" Height="24" VerticalContentAlignment="Center" Visibility="Visible"
+                         PreviewKeyDown="txtOmschrijving_PreviewKeyDown" KeyDown="txtOmschrijving_KeyDown"
+                         TabIndex="12" />
+                <TextBox Name="txtOpmerking" Grid.Row="5" Grid.Column="1" Margin="5,7,0,8" Height="24"
+                         VerticalAlignment="Center" VerticalContentAlignment="Center" Visibility="Visible"
+                         KeyDown="txtOpmerking_KeyDown" TabIndex="13" MaxLength="254" MaxLines="1" />
+                <CheckBox Name="chkDank" Grid.Row="6" Grid.Column="1" Margin="5,5,5,0" Height="24"
+                          VerticalAlignment="Top" VerticalContentAlignment="Center" Visibility="Hidden"
+                           Click="chkDank_Click" TabIndex="14" IsEnabled="False" />
+                <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Visibility="Hidden"
+                           Name="TextBlockUitleg" Text="Donateur heeft aangegeven geen dank te willen."
+                           Margin="32,10,0,32" />
+                <Button Name="btnOpslaan" Grid.Row="6" Grid.Column="3" Margin="0,5,5,5" Width="96" Height="48"
+                        VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False" Visibility="Visible"
+                        Click="btnOpslaan_Click" TabIndex="20">
+                    Opslaan
+                </Button>
+                <Button Name="btnVerwijderen" Grid.Row="6" Grid.Column="3" Margin="0,5,5,5" Width="96" Height="48"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" IsEnabled="True" Visibility="Hidden"
+                        Click="btnVerwijderen_Click">
+                    Verwijderen
+                </Button>
+                <Button Name="btnNiew" Grid.Row="6" Grid.Column="3" Margin="5,5,0,5" Width="96" Height="48"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Hidden" Click="btnNiew_Click">
+                    Nieuw
+                </Button>
+                <Border BorderThickness="0" Name="brdAdres" BorderBrush="#FFEA2222" Margin="5,5,5,0" CornerRadius="4"
+                        Grid.Column="3" Grid.RowSpan="6" Visibility="Hidden" />
+                <Grid Name="grNaam" Grid.Column="3" Grid.Row="0" Grid.RowSpan="6" Margin="10,10,10,5"
+                      Visibility="Hidden">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" Offset="0" />
+                            <GradientStop Color="#FF3C74C4" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="2" BorderBrush="Black" CornerRadius="4"
+                            Grid.Row="0" Grid.RowSpan="8" />
+
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                        <Label Content="Adres" FontWeight="Bold" Width="100" />
+                        <Label Content="Naam" FontWeight="Bold" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,0,0,0">
+                        <ComboBox Name="cmbAdres" Width="105" Margin="5,0" VerticalAlignment="Center" IsEditable="True"
+                                  DropDownClosed="cmbAdres_DropDownClosed" KeyDown="cmbAdres_KeyDown"
+                                  LostFocus="cmbAdres_LostFocus" PreviewKeyDown="cmbAdres_PreviewKeyDown" TabIndex="15">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                        <ComboBox Name="cmbNaam" Margin="5,2,5,3" Width="346" VerticalAlignment="Center"
+                                  IsEditable="True" DropDownClosed="cmbNaam_DropDownClosed"
+                                  PreviewKeyDown="cmbNaam_PreviewKeyDown" TabIndex="16" KeyDown="cmbNaam_KeyDown">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,0">
+                        <Label Content="Postcode" FontWeight="Bold" Width="115" />
+                        <Label Content="Bankrekening" FontWeight="Bold" HorizontalContentAlignment="Left" Width="88" />
+                        <ComboBox x:Name="cmbBankrekening" Margin="0,0" Width="150" VerticalAlignment="Center"
+                                  HorizontalAlignment="Right" IsEditable="True"
+                                  DropDownClosed="cmbBankrekening_DropDownClosed"
+                                  PreviewKeyDown="cmbBankrekening_PreviewKeyDown" TabIndex="18"
+                                  KeyDown="cmbBankrekening_KeyDown">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                        <Label Content="IBAN" FontWeight="Bold" HorizontalContentAlignment="Center" Width="88" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,0,0,0">
+                        <ComboBox x:Name="cmbPostcode" Width="105" Margin="5,0" VerticalAlignment="Center"
+                                  IsEditable="True" DropDownClosed="cmbPostcode_DropDownClosed"
+                                  PreviewKeyDown="cmbPostcode_PreviewKeyDown" TabIndex="17"
+                                  KeyDown="cmbPostcode_KeyDown">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                        <Label Content="Girorekening" FontWeight="Bold" HorizontalContentAlignment="Left" Width="88" />
+                        <ComboBox x:Name="cmbGiro" Margin="0,0" Width="100" VerticalAlignment="Center"
+                                  HorizontalAlignment="Right" IsEditable="True" DropDownClosed="cmbGiro_DropDownClosed"
+                                  PreviewKeyDown="cmbGiro_PreviewKeyDown" TabIndex="19" KeyDown="cmbGiro_KeyDown">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                        <ComboBox x:Name="cmbIBAN" Margin="5,0" Width="155" VerticalAlignment="Center"
+                                  HorizontalAlignment="Right" IsEditable="True"
+
+                                  TabIndex="19" KeyDown="CmbIBAN_KeyDown" PreviewKeyDown="CmbIBAN_PreviewKeyDown"
+                                  DropDownClosed="CmbIBAN_DropDownClosed">
+                            <ComboBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VirtualizingPanel.IsVirtualizing="True" IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ComboBox.ItemsPanel>
+                        </ComboBox>
+                    </StackPanel>
+                    <Border BorderThickness="1" BorderBrush="LightGray" Margin="5,5,5,5"
+                            CornerRadius="4" Grid.Row="4" Grid.Column="3" Grid.RowSpan="4" />
+                    <StackPanel Grid.Row="4" Grid.RowSpan="4" Margin="25,15" Orientation="Vertical">
+                        <Label Name="lblNaamDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
+                        <Label Name="lblAdresDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
+                        <Label Name="lblPCPlaatsDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </DockPanel>
+        <!-- Einde Boeking -->
+
+        <!-- Overzicht -->
+        <Border BorderThickness="1" BorderBrush="LightGray" 
+                Margin="15,5,15,5" 
+                CornerRadius="4" Grid.Row="4"
+                Grid.ColumnSpan="2">
+            <DataGrid Name="dgBoekingen" Visibility="Hidden" UseLayoutRounding="False" CanUserReorderColumns="False"
+                      CanUserResizeColumns="True" AutoGenerateColumns="False" RowHeaderWidth="0" IsReadOnly="True"
+                      MouseDoubleClick="dgBoekingen_MouseDoubleClick" FontSize="14" HeadersVisibility="Column"
+                      CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Blad}" Header="Blad" />
+                    <DataGridTextColumn Binding="{Binding Code}" Header="Code" Width="50" />
+                    <DataGridTextColumn Binding="{Binding Bedrag, StringFormat=\{0:c\}}" 
+                                        Header="Bedrag" Width="86">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="0,0,5,0" />
+                                <Setter Property="Language" Value="nl-NL" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding NaamBetaler}" 
+                                        Header="Nummer" Width="86">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="0,0,5,0" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding NaamVermelding}" Header="Naam" Width="325" />
+                    <DataGridTextColumn Binding="{Binding Omschrijving}" Header="Omschrijving" Width="210" />
+                    <DataGridTextColumn Binding="{Binding Opmerking}" Header="Opmerking" Width="110" />
+                    <DataGridCheckBoxColumn Binding="{Binding Dank}" Header="Dank" Width="50" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

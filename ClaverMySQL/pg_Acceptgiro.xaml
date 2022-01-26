@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ClaverMySQL"
       mc:Ignorable="d" 
       d:DesignHeight="737" d:DesignWidth="1016"
-      Title="pg_Acceptgiro" Background="AliceBlue">
+      Title="pg_Acceptgiro" Background="AliceBlue" Loaded="Page_Loaded">
     <Grid Background="{DynamicResource achtergrondkleur}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -51,7 +51,6 @@
                       Width="246"
                       Height="24"
                       Margin="0,42,0,43"
-                      GotFocus="cmbCode_GotFocus"
                       IsEditable="True"
                       ItemsSource="{Binding}" />
         </StackPanel>

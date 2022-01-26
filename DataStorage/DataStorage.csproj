@@ -48,12 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Aantallen.cs" />
+    <Compile Include="Classes\Acceptgiro.cs" />
     <Compile Include="Classes\PerPersoon.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DataSelect\GeneralDataAccess.cs" />
     <Compile Include="DataSelect\GeneralDataConnection.cs" />
     <Compile Include="DataSelect\GeneralDataRead.cs" />
     <Compile Include="Data\clsDataAantallen.cs" />
+    <Compile Include="Data\clsDataAcceptgiro.cs" />
     <Compile Include="Data\clsDataAdressen.cs" />
     <Compile Include="Data\clsDataControle.cs" />
     <Compile Include="Data\clsDataGrootboek.cs" />

@@ -66,8 +66,8 @@ namespace ClaverMySQL
 
         private void HaalWaardenOp()
         {
-            gegevens.Visibility = System.Windows.Visibility.Hidden;
-            melding.Visibility = System.Windows.Visibility.Visible;
+            gegevens.Visibility = Visibility.Hidden;
+            melding.Visibility = Visibility.Visible;
             printenOverzicht.IsEnabled = false;
             gegevens.Refresh();
             if (cmbMaand.Text.Length > 0 && cmbJaar.Text.Length > 0)

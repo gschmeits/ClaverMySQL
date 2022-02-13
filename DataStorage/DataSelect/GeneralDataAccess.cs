@@ -82,7 +82,7 @@ namespace DataStorage
                 message += "\r\n\r\n" + ex.Message + ex.StackTrace;
                 message += "\r\n\r\n" + "sql commando:\r\n" + command.CommandText;
                 MessageBox.Show(message,"Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
-                Application.Current.Shutdown();
+                //Application.Current.Shutdown();
             }
             return table;
         }

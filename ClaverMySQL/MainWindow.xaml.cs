@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClaverMySQL.Utils;
+using DataStorage;
 
 namespace ClaverMySQL
 {
@@ -146,7 +151,17 @@ namespace ClaverMySQL
 
         private void mnu_Overzichten_Maandoverzichten_Click(object sender, RoutedEventArgs e)
         {
-
+            var file = Functions.sDirectory("ConfigData.xml") + Functions.sFile("ConfigData.xml");
+            if (File.Exists(file))
+            {
+                OpenMicrosoftExcel(file);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
+                string msg2 = new FileNotFoundException().Message;
+                MessageBox.Show(msg2, "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void mnu_Overzichten_PerPersoon_Click(object sender, RoutedEventArgs e)
@@ -217,39 +232,95 @@ namespace ClaverMySQL
 
         private void _mnu_Printen_Dank_Globaal_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_DankGlobaal.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }
         }
 
         private void _mnu_Printen_Dank_Individueel_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_DankIndividueel.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }
         }
 
         private void extraInstellingen_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_Instellingen.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }
         }
 
         private void mnu_Extra_SaldiAanpassen_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_SaldiAanpassen.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }
         }
 
         private void _mnu_Extra_NietBetalenden_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_Niet Betalenden.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }
         }
 
         private void Mnu_Extra_Email_Click(object sender, RoutedEventArgs e)
         {
-
+            /*try
+            {
+                WebEditor mw = new WebEditor();
+                mw.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Log exception, then show it to the user with apologies...
+            }*/
         }
 
         private void beginscherm_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                frame1.Source = new Uri("pg_Logo.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-
+        static void OpenMicrosoftExcel(string file)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "EXCEL.EXE";
+            startInfo.Arguments = file;
+            Process.Start(startInfo);
+        }
     }
 }

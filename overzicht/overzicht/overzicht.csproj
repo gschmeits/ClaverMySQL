@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>overzzicht</RootNamespace>
+    <AssemblyName>maandoverzicht</AssemblyName>
+    <VSTO_HostDocumentName>maandoverzicht.xlsx</VSTO_HostDocumentName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <OfficeApplication>Excel</OfficeApplication>
+    <ProjectGuid>{06C49467-8EC6-4215-97C5-B1D27ABFB07F}</ProjectGuid>
+    <SolutionID>a010dbfe-3446-4dae-9856-bb4cfed0a678</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>D:\Projects\PetrusClaver\Test\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>nl</TargetCulture>
+    <ApplicationVersion>1.2.1.3</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>overzicht</ProductName>
+    <PublisherName>St. Petrus Claver</PublisherName>
+    <SupportUrl />
+    <FriendlyName>overzzicht</FriendlyName>
+    <OfficeApplicationDescription />
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VSTO_EmbedTypeLibraryInAssembly>false</VSTO_EmbedTypeLibraryInAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>VSTO40</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blad1.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Blad1.Designer.cs">
+      <DependentUpon>Blad1.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Blad2.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Blad2.Designer.cs">
+      <DependentUpon>Blad2.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Blad3.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Blad3.Designer.cs">
+      <DependentUpon>Blad3.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Blad4.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Blad4.Designer.cs">
+      <DependentUpon>Blad4.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="claver.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>claver.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ClaverRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClaverRibbon.Designer.cs">
+      <DependentUpon>ClaverRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\clsCellenLeeg.cs" />
+    <Compile Include="clsFuncties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ribbon.cs">
+      <XmlRibbon>true</XmlRibbon>
+    </Compile>
+    <Compile Include="Sheet1.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet1.Designer.cs">
+      <DependentUpon>Sheet1.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec318.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec318.Designer.cs">
+      <DependentUpon>Spec318.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec330.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec330.Designer.cs">
+      <DependentUpon>Spec330.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec331.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec331.Designer.cs">
+      <DependentUpon>Spec331.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec333.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec333.Designer.cs">
+      <DependentUpon>Spec333.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec336.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec336.Designer.cs">
+      <DependentUpon>Spec336.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Spec337.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Spec337.Designer.cs">
+      <DependentUpon>Spec337.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.cs">
+      <DependentUpon>maandoverzicht.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.Designer.cs">
+      <DependentUpon>ThisWorkbook.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Functions.cs" />
+    <EmbeddedResource Include="claver.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>claver.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaverRibbon.resx">
+      <DependentUpon>ClaverRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="GerTest.snk" />
+    <None Include="maandoverzicht.xlsx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ThisWorkbook.Designer.xml">
+      <DependentUpon>ThisWorkbook.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Blad1.Designer.xml">
+      <DependentUpon>Blad1.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Blad2.Designer.xml">
+      <DependentUpon>Blad2.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Blad3.Designer.xml">
+      <DependentUpon>Blad3.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Blad4.Designer.xml">
+      <DependentUpon>Blad4.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec318.Designer.xml">
+      <DependentUpon>Spec318.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec330.Designer.xml">
+      <DependentUpon>Spec330.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec333.Designer.xml">
+      <DependentUpon>Spec333.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec336.Designer.xml">
+      <DependentUpon>Spec336.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec337.Designer.xml">
+      <DependentUpon>Spec337.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec331.Designer.xml">
+      <DependentUpon>Spec331.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet1.Designer.xml">
+      <DependentUpon>Sheet1.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MTL.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{820d6efb-135b-4b6e-87ec-1ca07d8f37ee}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>overzicht_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FCFBBF89D730E36EF3A2574A2401E8F751F9D449</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GerTest.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="maandoverzicht.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]maandoverzicht.xlsx&quot;" />
+        <Host Name="Excel Document" Path=".\maandoverzicht.xlsx" GeneratedCodeNamespace="overzzicht" PublishedHash="966D85ED0F07EE44DEF548B431A7A4584298252F">
+          <HostItem Name="Blad1" Code="Blad1.cs" CanonicalName="Blad1" PublishedHash="C022206B650A30A20042BF5DF07C8506558B69DE" DisplayName="Huisll" Blueprint="Blad1.Designer.xml" GeneratedCode="Blad1.Designer.cs" />
+          <HostItem Name="Blad2" Code="Blad2.cs" CanonicalName="Blad2" PublishedHash="931477C78804ABDB6F95C42CEB1273F81CD876B3" DisplayName="Missiell" Blueprint="Blad2.Designer.xml" GeneratedCode="Blad2.Designer.cs" />
+          <HostItem Name="Blad3" Code="Blad3.cs" CanonicalName="Blad3" PublishedHash="4BDAA98DE7274BB4D8EF97869F3EDA6053F7B083" DisplayName="MTLl" Blueprint="Blad3.Designer.xml" GeneratedCode="Blad3.Designer.cs" />
+          <HostItem Name="Blad4" Code="Blad4.cs" CanonicalName="Blad4" PublishedHash="3F59363D142B7E078E46606E797C599CF6ED8F8F" DisplayName="Zakenll" Blueprint="Blad4.Designer.xml" GeneratedCode="Blad4.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="815273FD1CB92C5E5E978F265057AD6E05D6F504" DisplayName="Bilancio" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
+          <HostItem Name="Spec318" Code="Spec318.cs" CanonicalName="Spec318" PublishedHash="158538EFB858A1CF99A3BCA5B6DBF6F0C39C0D49" DisplayName="Spec318" Blueprint="Spec318.Designer.xml" GeneratedCode="Spec318.Designer.cs" />
+          <HostItem Name="Spec330" Code="Spec330.cs" CanonicalName="Spec330" PublishedHash="4619F4DC0A68A1A39EA3AB1B3203C86763AB0B7F" DisplayName="Spec330" Blueprint="Spec330.Designer.xml" GeneratedCode="Spec330.Designer.cs" />
+          <HostItem Name="Spec331" Code="Spec331.cs" CanonicalName="Spec331" PublishedHash="6EAC1464B2DE3968AC3692B5789F1FA2155C27B1" DisplayName="Spec450" Blueprint="Spec331.Designer.xml" GeneratedCode="Spec331.Designer.cs" />
+          <HostItem Name="Spec333" Code="Spec333.cs" CanonicalName="Spec333" PublishedHash="75E4B68DF9ED2156C30578B9262557F2A9F36483" DisplayName="Spec333" Blueprint="Spec333.Designer.xml" GeneratedCode="Spec333.Designer.cs" />
+          <HostItem Name="Spec336" Code="Spec336.cs" CanonicalName="Spec336" PublishedHash="69543BE790B1133F87336A412FD50854A2917960" DisplayName="Spec336" Blueprint="Spec336.Designer.xml" GeneratedCode="Spec336.Designer.cs" />
+          <HostItem Name="Spec337" Code="Spec337.cs" CanonicalName="Spec337" PublishedHash="C565BC1A00CB2918F726C5C50C142C9A43425B66" DisplayName="Spec426" Blueprint="Spec337.Designer.xml" GeneratedCode="Spec337.Designer.cs" />
+          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="E4E98B3A823A4E3BD022A1BFA71AEBB7E754D0FC" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!--
+    To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

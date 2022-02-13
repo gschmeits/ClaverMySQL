@@ -175,6 +175,7 @@ namespace DataStorage
                 if (c > (char)47 && c < (char)58) sF += c;
                 if (c == (char)44) sF += '.';
             }
+
             sF1 = sF;
             return sF1;
         }
@@ -225,6 +226,7 @@ namespace DataStorage
 
                 sF1 = sF;
             }
+
             return sF1;
         }
 
@@ -254,6 +256,7 @@ namespace DataStorage
                     sF1 = sF;
                 }
             }
+
             return sF1;
         }
 
@@ -271,6 +274,7 @@ namespace DataStorage
                     else break;
                 sF1 = sF;
             }
+
             return sF1;
         }
 
@@ -299,12 +303,14 @@ namespace DataStorage
 
                 iPos++;
             }
+
             if (iTeller == 0)
             {
                 sF += '.';
                 sF += '0';
                 sF += '0';
             }
+
             if (iTeller == 2) sF += '0';
             sF1 = sF;
             return sF1;
@@ -354,17 +360,12 @@ namespace DataStorage
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
+
             return ValueList[niveau];
         }
 
         public static void InitializeDatabaseConnection(bool loginU)
         {
-            //var host = "SCHMEITSNAS.SYNOLOGY.ME";
-            //var database = "autotest";
-            //var port = "3306";
-            //var user = "autotest";
-            //var password = "NiFSi1fZjbJ4zXE8";
-            //
             var host = "";
             var database = "";
             var port = "";
@@ -373,22 +374,12 @@ namespace DataStorage
             General.LogMessage("InitializeDatabaseConnection(" + loginU + ");",
                 1);
 
-            if (loginU == false)
-            {
-                var xelement = XElement.Load(GetCurrentDir(0) + "connect.xml");
-                General.LogMessage("xelement: " + xelement, 1);
-                var testsElements = xelement.Elements();
-                foreach (var testElement in testsElements)
-                {
-                    host = testElement.Element("host").Value;
-                    database = testElement.Element("database").Value;
-                    port = testElement.Element("port").Value;
-                    user = testElement.Element("username").Value;
-                    password = testElement.Element("password").Value;
-                }
-            }
+            host = sHost(GetCurrentDir(0) + "ConfigData.xml");
+            database = sDatabase(GetCurrentDir(0) + "ConfigData.xml");
+            user = sUsername(GetCurrentDir(0) + "ConfigData.xml");
+            password = sPassword(GetCurrentDir(0) + "ConfigData.xml");
+            port = sPort(GetCurrentDir(0) + "ConfigData.xml");
 
-            // anders hard gecodeerde gegevens gebruiker voor de database connectie.
             databaseConnection = new DatabaseConnection(
                 host,
                 database,
@@ -396,14 +387,109 @@ namespace DataStorage
                 user,
                 password);
 
-            General.LogMessage(databaseConnection.ToString(), 1);
-            General.LogMessage("Host:     " + databaseConnection.Host, 1);
-            General.LogMessage("Database: " + databaseConnection.Database, 1);
-            General.LogMessage("Port:     " + databaseConnection.Port, 1);
-            General.LogMessage("User:     " + databaseConnection.User, 1);
-            General.LogMessage("Password: " + databaseConnection.Password, 1);
             General.SetDatabaseConnection(databaseConnection);
         }
+
+        public static string sHost(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/connection/host");
+                text = node.InnerText;
+                return text;
+            }
+            catch (IOException ex)
+            {
+                var fout = ex.Message;
+            }
+
+            return text;
+        }
+
+        public static string sDatabase(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/connection/database");
+                text = node.InnerText;
+                return text;
+            }
+            catch (IOException ex)
+            {
+                var fout = ex.Message;
+            }
+
+            return text;
+        }
+
+        public static string sUsername(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/connection/username");
+                text = node.InnerText;
+                return text;
+            }
+            catch (IOException ex)
+            {
+                var fout = ex.Message;
+            }
+
+            return text;
+        }
+
+        public static string sPassword(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/connection/password");
+                text = node.InnerText;
+                return text;
+            }
+            catch (IOException ex)
+            {
+                var fout = ex.Message;
+            }
+
+            return text;
+        }
+
+        public static string sPort(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/connection/port");
+                text = node.InnerText;
+                return text;
+            }
+            catch (IOException ex)
+            {
+                var fout = ex.Message;
+            }
+
+            return text;
+        }
+
 
         public static string sBedragBedankjes(string xmlText)
         {
@@ -413,7 +499,8 @@ namespace DataStorage
                 var path = System.Environment.CurrentDirectory + "\\";
                 XmlDocument doc = new XmlDocument();
                 doc.Load(path + xmlText);
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/configdata/bedrag");
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/bedrag");
                 text = node.InnerText;
                 return text;
             }
@@ -421,6 +508,7 @@ namespace DataStorage
             {
                 var fout = ex.Message;
             }
+
             return text;
         }
 
@@ -432,14 +520,127 @@ namespace DataStorage
                 var path = System.Environment.CurrentDirectory + "\\";
                 XmlDocument doc = new XmlDocument();
                 doc.Load(path + xmlText);
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/configdata/aantal");
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/aantal");
                 text = node.InnerText;
             }
             catch (IOException ex)
             {
                 var fout = ex.Message;
             }
+
             return text;
+        }
+
+        public static string sDirectory(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/dir");
+                text = node.InnerText;
+            }
+            catch (IOException ex)
+            {
+                errorBericht(ex);
+            }
+
+            return text;
+        }
+
+        public static string sDirectoryTemps(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/configdata/tempdir");
+                text = node.InnerText;
+            }
+            catch (IOException ex)
+            {
+                errorBericht(ex);
+            }
+            return text;
+        }
+
+        public static string sFile(string xmlText)
+        {
+            string text = "";
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlText);
+
+                XmlNode node =
+                    doc.DocumentElement.SelectSingleNode("/configdata/file");
+                text = node.InnerText;
+            }
+            catch (IOException ex)
+            {
+                errorBericht(ex);
+            }
+
+            return text;
+        }
+
+        public static void errorBericht(Exception ex, string function1 = "")
+        {
+            System.Text.StringBuilder errorMessages = new StringBuilder();
+
+            errorMessages.Append(function1 + "\n" +
+                                 "Message: " + ex.Message + "\n" +
+                                 "Source: " + ex.Source + "\n" +
+                                 "StrackTrace: " + ex.StackTrace + "\n");
+            MessageBox.Show(errorMessages.ToString(), "Error");
+            //WPFMessageBox.Show("Error", errorMessages.ToString());
+            Functions.LogMessageToFile(errorMessages.ToString(), 4);
+
+        }
+
+        public static void LogMessageToFile(string message, int niveau)
+        {
+            //MessageBox.Show(System.IO.Path.GetTempPath());
+            //WPFMessageBox.Show(System.Environment.SystemDirectory);
+            System.IO.StreamWriter sw =
+                System.IO.File.AppendText(
+                    GetTempPath() + "Logfile.txt"); // Change filename
+            try
+            {
+                string niveau1 = "";
+                switch (niveau)
+                {
+                    case 1:
+                        niveau1 = "Info      : ";
+                        break;
+                    case 2:
+                        niveau1 = "Warning   : ";
+                        break;
+                    case 3:
+                        niveau1 = "Failure   : ";
+                        break;
+                    case 4:
+                        niveau1 = "Critical  : ";
+                        break;
+                    default:
+                        niveau1 = "Info      : ";
+                        break;
+                }
+
+                string logLine =
+                    System.String.Format(
+                        "{0:G}:\t{1}\t{2}.", System.DateTime.Now, niveau1,
+                        message);
+                sw.WriteLine(logLine);
+            }
+            finally
+            {
+                sw.Close();
+            }
         }
     }
 }

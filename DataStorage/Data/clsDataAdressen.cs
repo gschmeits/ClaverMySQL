@@ -22,10 +22,10 @@ namespace DataStorage.Data
         public static string cmbNaamBedragSQL()
         {
             var sSQL =
-                "SELECT a.achternaam + ', ' + a.titel_en_voornaam] as naam, " +
+                "SELECT CONCAT(a.achternaam,', ',a.titel_en_voornaam) as naam, " +
                 "a.adresnummer, sum(b.bedrag) as bedrag FROM tbl_Mutaties as b, " +
                 "tbl_Adressen as a WHERE b.NaamBetaler = a.adresnummer " +
-                "AND a.dank = 1" +
+                "AND a.dank = 1 " +
                 "GROUP BY a.achternaam, a.titel_en_voornaam, a.adresnummer " +
                 "ORDER BY a.achternaam, a.titel_en_voornaam";
             return sSQL;
@@ -54,8 +54,8 @@ namespace DataStorage.Data
         public static string cmbAdressenBedragSQL()
         {
             var sSQL =
-                "select a.adresnummer, a.titel_en_voornaam], a.achternaam, a.email, " +
-                "sum(b.bedrag) as bedrag from tbl_mutaties as b, tbl_Adressen as a " +
+                "select a.adresnummer, a.titel_en_voornaam, a.achternaam, a.email, " +
+                "sum(b.bedrag) as bedrag from tbl_Mutaties as b, tbl_Adressen as a " +
                 "where b.NaamBetaler = a.adresnummer AND a.dank = 1" +
                 " group by a.adresnummer, " +
                 "a.titel_en_voornaam, a.achternaam, a.email " +
@@ -66,7 +66,7 @@ namespace DataStorage.Data
         public static string cmbEmailSQL()
         {
             var sSQL =
-                "SELECT adresnummer, [titel en voornaam], achternaam, straat, huisnummer, " +
+                "SELECT adresnummer, titel en voornaam, achternaam, straat, huisnummer, " +
                 "postcode, " +
                 "plaats, land, aantal, LETTERA, Verwijderd, Reden, " +
                 "kalender, IBAN, Bankrekening, Girorekening, Dank, " +
@@ -78,13 +78,13 @@ namespace DataStorage.Data
         public static string cmbEmailBedragSQL()
         {
             var sSQL =
-                "SELECT a.achternaam + ', ' + a.titel_en_voornaam as naam, " +
+                "SELECT CONCAT(a.achternaam, ', ',a.titel_en_voornaam) as naam, " +
                 "a.adresnummer, a.email, sum(b.bedrag) as bedrag " +
-                "FROM tbl_mutaties as b, tbl_Adressen as a " +
+                "FROM tbl_Mutaties as b, tbl_Adressen as a " +
                 "WHERE b.NaamBetaler = a.adresnummer " +
                 "AND NULLIF(email, '') IS NOT NULL AND " +
-                "a.dank = 1" +
-                "GROUP BY a.achternaam, a.[titel en voornaam], " +
+                "a.dank = 1 " +
+                "GROUP BY a.achternaam, a.titel_en_voornaam, " +
                 "a.adresnummer, a.email " +
                 "ORDER BY a.email, a.achternaam, " +
                 "a.titel_en_voornaam";

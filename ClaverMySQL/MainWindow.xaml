@@ -97,9 +97,11 @@
                     <MenuItem Name="_mnu_Extra_NietBetalenden"
                               Click="_mnu_Extra_NietBetalenden_Click"
                               Header="Niet betalenden" />
+                    <!--
                     <Separator />
                     <MenuItem Name="mnu_Extra_Email"
                               Header="Email templates" Click="Mnu_Extra_Email_Click" />
+                    -->
                     <Separator />
                     <MenuItem Header="Beginscherm"
                               Name="beginscherm"

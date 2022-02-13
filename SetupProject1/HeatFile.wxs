@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="MyProgramDir">
+            <Component Id="cmpD101F9994FAAC6838AFF9A4494AA7A9A" Guid="{6D87F5AC-7798-478C-AD32-05AE08ABCF83}">
+                <File Id="filB8D89DDF0BDCC957D53CAE7623CBD709" KeyPath="yes" Source="$(var.BestandsLocatie)\BouncyCastle.Crypto.dll" />
+            </Component>
+            <Component Id="cmp9A9BB6349E8F5924B96550A8F23BE75E" Guid="{3BCE1320-29A8-42EF-A631-D63809FC3B76}">
+                <File Id="fil98FBB76FCDF59A3E3197E0A2217CE5F0" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.exe" />
+            </Component>
+            <Component Id="cmpA04E9A3D1B2C36E9BDFC4BF5DA4D71D4" Guid="{5F678839-0C71-4583-B911-18409F51CE5F}">
+                <File Id="filDA45519D2AB767F523E3793D41DE50A0" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.exe.config" />
+            </Component>
+            <Component Id="cmp56D39D2FE63572AEAC96BAB1FF3BB2D9" Guid="{E242773E-C976-43EE-A7F0-209783C2F233}">
+                <File Id="fil12757264E09FA2BC44DDA7814081C774" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.pdb" />
+            </Component>
+            <Component Id="cmp2DB4568992F4D5CD61A5E6A75D3C5836" Guid="{49F3DFFB-29B1-451D-AFC9-889DC68E0799}">
+                <File Id="filE5AEFFF39EDB2CC0A0C9961E546E437E" KeyPath="yes" Source="$(var.BestandsLocatie)\ConfigData.xml" />
+            </Component>
+            <Component Id="cmp5A1D853C31755CB3F6FD7C3DF8B25D41" Guid="{35B07EAC-4634-42AD-AF0F-AF5C0D8D69C8}">
+                <File Id="fil1D2FBA73C8525C3B9103D6C2BC68B1D6" KeyPath="yes" Source="$(var.BestandsLocatie)\connect.xml" />
+            </Component>
+            <Component Id="cmpF742CFD77AD1ECF252CE6E010611A626" Guid="{E4879ACB-49ED-42EC-9626-CD0A4945556D}">
+                <File Id="fil03CB6F80810515AE683A4059AB33E4F8" KeyPath="yes" Source="$(var.BestandsLocatie)\DataStorage.dll" />
+            </Component>
+            <Component Id="cmpD3494B20E472D86DB2FCDE81D94F38D4" Guid="{9D4550DA-4402-4FC1-B605-80301CA1314F}">
+                <File Id="fil8CBD703A08ECB4FEEDCAC8D6D2FE9E38" KeyPath="yes" Source="$(var.BestandsLocatie)\DataStorage.pdb" />
+            </Component>
+            <Component Id="cmp0E564A9E6DC35AE2EC34169ED9290B6D" Guid="{BE27C857-2F0A-414D-B652-866E4D0A1F29}">
+                <Class Id="{0032F712-43A4-3C6A-956D-5D786FB0B155}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.BoolValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.BoolValue" Description="Google.Protobuf.WellKnownTypes.BoolValue" />
+                </Class>
+                <Class Id="{023B4358-7BB3-37FE-9C67-28F404CC9B6E}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Empty" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Empty" Description="Google.Protobuf.WellKnownTypes.Empty" />
+                </Class>
+                <Class Id="{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.UInt64Value" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.UInt64Value" Description="Google.Protobuf.WellKnownTypes.UInt64Value" />
+                </Class>
+                <Class Id="{16B46B0A-EB2F-3156-89AB-86248F2E16A3}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Method" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Method" Description="Google.Protobuf.WellKnownTypes.Method" />
+                </Class>
+                <Class Id="{22303F6D-2671-3DEF-A688-35ABA6626943}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Field" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Field" Description="Google.Protobuf.WellKnownTypes.Field" />
+                </Class>
+                <Class Id="{338CCBE4-C52D-32BE-80B6-9834225E0DF6}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Api" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Api" Description="Google.Protobuf.WellKnownTypes.Api" />
+                </Class>
+                <Class Id="{33E64E32-B080-3412-A167-AECE4D729685}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Enum" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Enum" Description="Google.Protobuf.WellKnownTypes.Enum" />
+                </Class>
+                <Class Id="{436751B6-F4A1-3993-BA87-AA9E0C91CBED}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Int32Value" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Int32Value" Description="Google.Protobuf.WellKnownTypes.Int32Value" />
+                </Class>
+                <Class Id="{4587272A-E63C-31EB-A6B2-9C9E461B840C}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.FieldMask" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.FieldMask" Description="Google.Protobuf.WellKnownTypes.FieldMask" />
+                </Class>
+                <Class Id="{4636F0B4-5065-3F84-9A6B-5A378947516F}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Option" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Option" Description="Google.Protobuf.WellKnownTypes.Option" />
+                </Class>
+                <Class Id="{512DE1E5-551A-3064-9602-E2FD321130F5}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Int64Value" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Int64Value" Description="Google.Protobuf.WellKnownTypes.Int64Value" />
+                </Class>
+                <Class Id="{53AFE71B-DFEF-3780-A82F-97FDD761D890}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.SourceContext" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.SourceContext" Description="Google.Protobuf.WellKnownTypes.SourceContext" />
+                </Class>
+                <Class Id="{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.ListValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.ListValue" Description="Google.Protobuf.WellKnownTypes.ListValue" />
+                </Class>
+                <Class Id="{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.EnumValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.EnumValue" Description="Google.Protobuf.WellKnownTypes.EnumValue" />
+                </Class>
+                <Class Id="{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Any" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Any" Description="Google.Protobuf.WellKnownTypes.Any" />
+                </Class>
+                <Class Id="{73E14DCA-9276-349C-AFC7-8FA5F620741F}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Mixin" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Mixin" Description="Google.Protobuf.WellKnownTypes.Mixin" />
+                </Class>
+                <Class Id="{77CDC23A-96B6-319F-99D9-B97252B98817}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Type" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Type" Description="Google.Protobuf.WellKnownTypes.Type" />
+                </Class>
+                <Class Id="{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.FloatValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.FloatValue" Description="Google.Protobuf.WellKnownTypes.FloatValue" />
+                </Class>
+                <Class Id="{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Duration" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Duration" Description="Google.Protobuf.WellKnownTypes.Duration" />
+                </Class>
+                <Class Id="{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.DoubleValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.DoubleValue" Description="Google.Protobuf.WellKnownTypes.DoubleValue" />
+                </Class>
+                <Class Id="{92D27F4C-6535-3663-987E-CA44530C793A}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.BytesValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.BytesValue" Description="Google.Protobuf.WellKnownTypes.BytesValue" />
+                </Class>
+                <Class Id="{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.StringValue" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.StringValue" Description="Google.Protobuf.WellKnownTypes.StringValue" />
+                </Class>
+                <Class Id="{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Struct" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Struct" Description="Google.Protobuf.WellKnownTypes.Struct" />
+                </Class>
+                <Class Id="{E507A1E8-8E5A-37E7-9768-C7147F412422}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.UInt32Value" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.UInt32Value" Description="Google.Protobuf.WellKnownTypes.UInt32Value" />
+                </Class>
+                <Class Id="{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Timestamp" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Timestamp" Description="Google.Protobuf.WellKnownTypes.Timestamp" />
+                </Class>
+                <Class Id="{F0DEBEBC-02ED-30E8-A417-3CB976A88730}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.Value" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Google.Protobuf.WellKnownTypes.Value" Description="Google.Protobuf.WellKnownTypes.Value" />
+                </Class>
+                <File Id="filA17481500BCF272B9828A8A0B66EE064" KeyPath="yes" Source="$(var.BestandsLocatie)\Google.Protobuf.dll" />
+                <ProgId Id="Record" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.BoolValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.BoolValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0032F712-43A4-3C6A-956D-5D786FB0B155}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Empty" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Empty" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{023B4358-7BB3-37FE-9C67-28F404CC9B6E}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.UInt64Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.UInt64Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{12AFF5EF-B8B3-34FC-910D-C22C90B0A8F7}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Method" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Method" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{16B46B0A-EB2F-3156-89AB-86248F2E16A3}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Field" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Field" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{22303F6D-2671-3DEF-A688-35ABA6626943}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Api" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Api" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{338CCBE4-C52D-32BE-80B6-9834225E0DF6}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Enum" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Enum" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{33E64E32-B080-3412-A167-AECE4D729685}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Int32Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Int32Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{436751B6-F4A1-3993-BA87-AA9E0C91CBED}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.FieldMask" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.FieldMask" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4587272A-E63C-31EB-A6B2-9C9E461B840C}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Option" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Option" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4636F0B4-5065-3F84-9A6B-5A378947516F}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Int64Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Int64Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{512DE1E5-551A-3064-9602-E2FD321130F5}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.SourceContext" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.SourceContext" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{53AFE71B-DFEF-3780-A82F-97FDD761D890}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.ListValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.ListValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{59461A9E-EA00-3E77-9B69-BC3E6A67DC07}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.EnumValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.EnumValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{69E8CB9D-EF7E-3ED7-8399-3EE9FCF5105C}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Any" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Any" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6FDCA840-DA15-3A81-B918-F6F4F1A003A3}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Mixin" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Mixin" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{73E14DCA-9276-349C-AFC7-8FA5F620741F}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Type" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Type" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77CDC23A-96B6-319F-99D9-B97252B98817}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.FloatValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.FloatValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7A0AD5B2-C423-3F5C-AF9E-7E2435C5B984}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Duration" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Duration" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7ED8EEB1-7521-3533-B10D-82567B3ACB9B}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.DoubleValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.DoubleValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8B0A9BB7-40E5-3374-AAF0-50417D6D8398}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.BytesValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.BytesValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{92D27F4C-6535-3663-987E-CA44530C793A}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.StringValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.StringValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C415D36C-73E0-3D7B-89C4-FAA1EF13FAD0}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Struct" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Struct" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{DF3AB8A0-085E-3403-9B44-3B8A1E76F138}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.UInt32Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.UInt32Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E507A1E8-8E5A-37E7-9768-C7147F412422}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Timestamp" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Timestamp" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{E872021C-A6F1-33BE-BED0-8B3D9EFA3F9A}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32" Name="Class" Value="Google.Protobuf.WellKnownTypes.Value" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F0DEBEBC-02ED-30E8-A417-3CB976A88730}\InprocServer32" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{0568D805-7BF2-31F9-AA39-8EC42B3B2C11}\3.6.1.0" Name="Class" Value="Google.Protobuf.Reflection.FieldType" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{0568D805-7BF2-31F9-AA39-8EC42B3B2C11}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{0568D805-7BF2-31F9-AA39-8EC42B3B2C11}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{0568D805-7BF2-31F9-AA39-8EC42B3B2C11}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{08BA12F1-F91A-33F2-8D2A-819662A57664}\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Syntax" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{08BA12F1-F91A-33F2-8D2A-819662A57664}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{08BA12F1-F91A-33F2-8D2A-819662A57664}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{08BA12F1-F91A-33F2-8D2A-819662A57664}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{108882F5-70DC-340E-82F3-EDA99E5BC22E}\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.NullValue" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{108882F5-70DC-340E-82F3-EDA99E5BC22E}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{108882F5-70DC-340E-82F3-EDA99E5BC22E}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{108882F5-70DC-340E-82F3-EDA99E5BC22E}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{27450577-C82C-31EE-A377-28953D467CAF}\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Field+Types+Cardinality" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{27450577-C82C-31EE-A377-28953D467CAF}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{27450577-C82C-31EE-A377-28953D467CAF}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{27450577-C82C-31EE-A377-28953D467CAF}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{993DD788-22AE-303B-8418-4D9017988933}\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Value+KindOneofCase" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{993DD788-22AE-303B-8418-4D9017988933}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{993DD788-22AE-303B-8418-4D9017988933}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{993DD788-22AE-303B-8418-4D9017988933}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C0F65297-AA42-3C27-9A7D-DE8C425636A3}\3.6.1.0" Name="Class" Value="Google.Protobuf.WireFormat+WireType" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C0F65297-AA42-3C27-9A7D-DE8C425636A3}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C0F65297-AA42-3C27-9A7D-DE8C425636A3}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C0F65297-AA42-3C27-9A7D-DE8C425636A3}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="Class" Value="Google.Protobuf.WellKnownTypes.Field+Types+Kind" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="Assembly" Value="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
+            </Component>
+            <Component Id="cmpA467743F6CBE69533AE43E36E3D47F42" Guid="{60F8D980-E6C4-4539-9EFB-405A26107202}">
+                <File Id="fil76641FB8B5AD7BBF76690FB6ED2DAEC1" KeyPath="yes" Source="$(var.BestandsLocatie)\MySql.Data.dll" />
+            </Component>
+            <Component Id="cmp5048E90285D64D22583CC9001A9A90DB" Guid="{75659309-DFFD-451B-9359-E40D4DB062E0}">
+                <File Id="fil354B49D6C562040FB34730111FD77AC0" KeyPath="yes" Source="$(var.BestandsLocatie)\MySql.Data.xml" />
+            </Component>
+            <Component Id="cmp556130E34358A1510E662B67E5405124" Guid="{8AA48A36-319E-4324-BB57-F1AF7FD3C013}">
+                <File Id="fil598B22546E4092DC2AB2B64BA2C6F40B" KeyPath="yes" Source="$(var.BestandsLocatie)\Renci.SshNet.dll" />
+            </Component>
+            <Component Id="cmp10340E4A99A92EF4009EC6DA6632FAE2" Guid="{2B95BD61-30CA-41BA-B806-7238D09B785B}">
+                <File Id="fil55F5D7F1D3D17322001CCD2CB6C6FC43" KeyPath="yes" Source="$(var.BestandsLocatie)\settings.xml" />
+            </Component>
+            <Component Id="cmp2B714EFEC87C12BA608CFC2499ABFA8E" Guid="{778EA402-3BE3-489F-BCA6-CBC033B0018D}">
+                <File Id="fil25FFAF315EDADDC591AD19FDF267E3FF" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.exe" />
+            </Component>
+            <Component Id="cmpD45FF048B68BF9EE7C3C1CE3A9916A11" Guid="{2D0B23AE-15FA-49CF-B09E-0F0C82F2BD8A}">
+                <File Id="fil148C80E0985B52C618273ED8D1E517C1" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.exe.config" />
+            </Component>
+            <Component Id="cmp62DD37905CB40994653EE7E2A58AF3C0" Guid="{1AD136E5-3CAD-4C32-886F-F120353A87FF}">
+                <File Id="fil884E35799EDDAA8770506E5D52C0285B" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.pdb" />
+            </Component>
+            <Directory Id="dir75DC31AE11B74CF41B1F249B4772B374" Name="Images">
+                <Component Id="cmp9AC0B037570A0709CC012C817D2F3EF8" Guid="{DC9151D4-98D6-4ED9-977F-3D5F1BAB82A6}">
+                    <File Id="fil1236FD49C47AA34150A2D01EC8E173DD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\backcolor.png" />
+                </Component>
+                <Component Id="cmpC0F2DE6108086E11B68AB138D2D2DA42" Guid="{0460B518-C234-46F8-81F9-CB8A7B496DE4}">
+                    <File Id="fil50FC2E66A1ABE58A0759470BF390591A" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\bold.png" />
+                </Component>
+                <Component Id="cmp92BBE39B299638914DB6A98A52AC326B" Guid="{CCB2DDEB-5EE7-4080-9BBB-7359B0345711}">
+                    <File Id="fil552B548AD91B663C413F13A2EAF939AD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\box.png" />
+                </Component>
+                <Component Id="cmp287187E9C8455CEE9C7C344498770B28" Guid="{60D80F23-9B7B-4D4D-BF4A-878F49A86B6B}">
+                    <File Id="fil6AE7EAFE14AAE884D5806E608BFCFEA9" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\bullets.png" />
+                </Component>
+                <Component Id="cmp27528E01454E7540087AFBFFEEDE7AA1" Guid="{E08B946A-53BB-4AF3-AB46-2F1DB96E42AA}">
+                    <File Id="filD49867A1998270036127E0E1582BC55C" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\center.png" />
+                </Component>
+                <Component Id="cmp36402998C90225DFD006D8D07F84ABF6" Guid="{D8CAA44E-32CF-4F05-B6AF-DDBCF1A5601E}">
+                    <File Id="fil8641B4EE5F688AF16406DD8579475B4F" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\center2.png" />
+                </Component>
+                <Component Id="cmp443AD79467F72E5516FD89CF76016511" Guid="{B08CF57D-3839-41E6-BDE3-88D0C85C70B4}">
+                    <File Id="filA23B6E9FD4FC6F1278CEA441F8C79F3A" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\circle.png" />
+                </Component>
+                <Component Id="cmpA4D08F7B192555A3C8D0E0916FE44E16" Guid="{EE71317A-E06E-4E9E-9FE9-1327C924E36F}">
+                    <File Id="fil456F946D0B09F2F2E488A9F4EB582640" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Color.png" />
+                </Component>
+                <Component Id="cmpFDF8B3C89863CEFD4F6514282BBA1741" Guid="{E5EE8535-720C-4293-93A7-B850A6F1E899}">
+                    <File Id="filECFC1A7FD2C321C8FF4051E558281E8F" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\cross.png" />
+                </Component>
+                <Component Id="cmp0DF7B34F712467EBDFD881D45EC625E6" Guid="{D4FB0C4C-57C7-4134-A1A7-FA21E16D90F4}">
+                    <File Id="fil61164460E2B4B43B56DF4DC1DCDC8F26" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Editor.png" />
+                </Component>
+                <Component Id="cmp43946A4D6FBF81966B6D8FA41A091E0C" Guid="{3299D64A-3234-41E0-BBE4-3BF1F38FC073}">
+                    <File Id="fil7975C7F8797669461F328246F6A02688" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\gray.png" />
+                </Component>
+                <Component Id="cmp8E967F010C6CBC1A3428000E8199174F" Guid="{F1723B65-DBCA-4D51-A64E-E83949FEB8B0}">
+                    <File Id="fil07C8837D2DD0F36725B48E051CAE4FA1" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\html.png" />
+                </Component>
+                <Component Id="cmp4B5A4C51FA4B091E9E9800AEB9B41392" Guid="{0831794B-B4E8-4FD8-B287-34857DF5129E}">
+                    <File Id="filC28B7273083C94F1C02C5159B29EA4BE" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\ident.png" />
+                </Component>
+                <Component Id="cmpF63CD806A6F21D59D9C8CF4BF79506F4" Guid="{AE4503ED-B65A-4BC5-AA2C-967A4B3A9C04}">
+                    <File Id="fil1325D354D8C8D7A21EE4CD3A7B45E8B7" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\image.png" />
+                </Component>
+                <Component Id="cmp7C82A8B04BC110B66C6C599D59C4FCF4" Guid="{26859B65-5F51-40C8-8856-92AC63D93AE6}">
+                    <File Id="filA9B60F9C0D2B8FD8F9FFDC922AF401FD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\italic.png" />
+                </Component>
+                <Component Id="cmp533978CCA3B46AB0B6716F70F06771D9" Guid="{B3868B5B-DD3F-4542-A6A5-85733FAC786A}">
+                    <File Id="fil54FE1CE8E1F051690DCEB55DE5E747FE" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\LeftAlign.png" />
+                </Component>
+                <Component Id="cmp5F98866F4817AE8EFA38F4F0E13079E1" Guid="{A4654296-8B00-4310-87C5-E9F59728A2B8}">
+                    <File Id="fil960F5C829AC1F3DEBC590568C626D531" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\line.png" />
+                </Component>
+                <Component Id="cmp5546DDC4B96B3F5618D5C33A318DF239" Guid="{A7023B7D-8A69-47A7-A349-E0AA9D34FB17}">
+                    <File Id="fil206A1104C335060C9EFDBE3198EFD53B" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\link.png" />
+                </Component>
+                <Component Id="cmpCA117579A50F5F5F7A036CAE36B705D3" Guid="{5F4260E6-F6D0-46A6-B7F5-161357A22E2D}">
+                    <File Id="filB4CB9E5F22C7BA356663D6A7C4E8B1ED" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo.ico" />
+                </Component>
+                <Component Id="cmpC3CF6AA0AEB0468739A8E5CCB6AA56D0" Guid="{96E6ADB5-A4A5-4960-9971-99519681D57E}">
+                    <File Id="filF5E9E22CC30E28B9F0BF217D4E031C69" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo.png" />
+                </Component>
+                <Component Id="cmp66FADF33F8C471C9D9A00BF0332AA63C" Guid="{E908626D-8B42-470C-8A2E-5BD80049DF26}">
+                    <File Id="fil99C9BB3442BB07642D3BC5F2263067F3" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo1.png" />
+                </Component>
+                <Component Id="cmp86CBF9CFD8F42557935583463F33AFCA" Guid="{4F9D7BE2-68DD-4A45-A76A-1454FE32B0F8}">
+                    <File Id="fil6A604E92122DB36D8ECAA01D88F017D7" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\MTL.ico" />
+                </Component>
+                <Component Id="cmp8F8342BD1332196776F5C51E541DC9F4" Guid="{0165DD5F-83AE-46ED-B26C-A75E8148CEBF}">
+                    <File Id="fil47A1CCF49FFB3DF6F5B120125AA61B45" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\new.png" />
+                </Component>
+                <Component Id="cmp876F3DD1E3D92B7D8E6B0661136DBE6F" Guid="{DC51E1CB-10E8-4378-B5DE-459EEEB6F776}">
+                    <File Id="filB303D91D578053DF3E7EBE02654F7B81" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Numbered.png" />
+                </Component>
+                <Component Id="cmp711415EDA4C9EEB8DEE5A9A2BBA22575" Guid="{360D86CF-AFCE-42E2-BAE1-16B0D2D5EF7E}">
+                    <File Id="filF2C3EB7A1162DD3D14594F7964A68CD5" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\open.png" />
+                </Component>
+                <Component Id="cmp001754AD8F32DA23D0509365A9DD977F" Guid="{A8683E25-4D36-44F0-BDAB-8A01A81E4AC4}">
+                    <File Id="fil3909EAD7654D57DE7CD0B73CBF23F755" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\OutIdent.png" />
+                </Component>
+                <Component Id="cmp2EC511C9B5FC2A7B70124146B7941B7F" Guid="{CC890649-344E-413E-9822-2D45208EEC55}">
+                    <File Id="filA0EDCF765E678AE740055E8204039506" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\RightAlign.png" />
+                </Component>
+                <Component Id="cmp19765F3C3E1D8AF20D26A120F2F1485B" Guid="{E794F7FE-6C64-4823-A61A-D671B483F47B}">
+                    <File Id="fil546EF704655A14F00DA07A2DBE7AC4BA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\save.png" />
+                </Component>
+                <Component Id="cmp953CFECBF439F678867E58734EDBFCA1" Guid="{F73CBF75-73BE-42CB-AF78-71A71F797698}">
+                    <File Id="fil0328C8AA7659C83B569B17F4828C017E" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Save_6530_32.bmp" />
+                </Component>
+                <Component Id="cmp6797A6A5F3DFCA6F17FAC15C6512E9EB" Guid="{155648B9-D849-4943-A632-111C714C06D9}">
+                    <File Id="filCC74DD088F61C3B8A8D6682FC124A7DA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\sspc-logo.jpg" />
+                </Component>
+                <Component Id="cmpE193AEF5D53E687DAD9D3FA4EA31FE4A" Guid="{BE066BA7-5A72-4967-B618-FEBB6697860E}">
+                    <File Id="fil188A4502929AE8F9F73B92F6869A96E6" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\sspc-logo_150.jpg" />
+                </Component>
+                <Component Id="cmpC34C56A50B9C8AE092A74AA313ACF311" Guid="{3866863E-E1B3-41A4-92B2-DAECF4236398}">
+                    <File Id="filEF90935E89BAE3710EE7E425A00730E3" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\stichteres.png" />
+                </Component>
+                <Component Id="cmpBACCA6635023B4B59BEF10EDFD45CC50" Guid="{BA073ED1-EFB5-4EF7-A5DD-8ABC39C3CDBF}">
+                    <File Id="filA2C7E6D34C664AD7F817DE9CAF1EB114" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Tjek.png" />
+                </Component>
+                <Component Id="cmp0A64698517D179B06B0454471C42A57B" Guid="{C85EFE3D-9FD5-45D3-9B61-7A98964FBC86}">
+                    <File Id="fil899341912335AC07E9287EF1F23C1FAA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\UnderLine.png" />
+                </Component>
+                <Component Id="cmp9283DB9C98BE7F77808CA5C7E0E5536D" Guid="{DE99CED6-4400-4474-B873-538096E7F6DB}">
+                    <File Id="filB198E15141BB62CC815281C15B198B94" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\view.png" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="NewFilesGroup">
+            <ComponentRef Id="cmpD101F9994FAAC6838AFF9A4494AA7A9A" />
+            <ComponentRef Id="cmp9A9BB6349E8F5924B96550A8F23BE75E" />
+            <ComponentRef Id="cmpA04E9A3D1B2C36E9BDFC4BF5DA4D71D4" />
+            <ComponentRef Id="cmp56D39D2FE63572AEAC96BAB1FF3BB2D9" />
+            <ComponentRef Id="cmp2DB4568992F4D5CD61A5E6A75D3C5836" />
+            <ComponentRef Id="cmp5A1D853C31755CB3F6FD7C3DF8B25D41" />
+            <ComponentRef Id="cmpF742CFD77AD1ECF252CE6E010611A626" />
+            <ComponentRef Id="cmpD3494B20E472D86DB2FCDE81D94F38D4" />
+            <ComponentRef Id="cmp0E564A9E6DC35AE2EC34169ED9290B6D" />
+            <ComponentRef Id="cmpA467743F6CBE69533AE43E36E3D47F42" />
+            <ComponentRef Id="cmp5048E90285D64D22583CC9001A9A90DB" />
+            <ComponentRef Id="cmp556130E34358A1510E662B67E5405124" />
+            <ComponentRef Id="cmp10340E4A99A92EF4009EC6DA6632FAE2" />
+            <ComponentRef Id="cmp2B714EFEC87C12BA608CFC2499ABFA8E" />
+            <ComponentRef Id="cmpD45FF048B68BF9EE7C3C1CE3A9916A11" />
+            <ComponentRef Id="cmp62DD37905CB40994653EE7E2A58AF3C0" />
+            <ComponentRef Id="cmp9AC0B037570A0709CC012C817D2F3EF8" />
+            <ComponentRef Id="cmpC0F2DE6108086E11B68AB138D2D2DA42" />
+            <ComponentRef Id="cmp92BBE39B299638914DB6A98A52AC326B" />
+            <ComponentRef Id="cmp287187E9C8455CEE9C7C344498770B28" />
+            <ComponentRef Id="cmp27528E01454E7540087AFBFFEEDE7AA1" />
+            <ComponentRef Id="cmp36402998C90225DFD006D8D07F84ABF6" />
+            <ComponentRef Id="cmp443AD79467F72E5516FD89CF76016511" />
+            <ComponentRef Id="cmpA4D08F7B192555A3C8D0E0916FE44E16" />
+            <ComponentRef Id="cmpFDF8B3C89863CEFD4F6514282BBA1741" />
+            <ComponentRef Id="cmp0DF7B34F712467EBDFD881D45EC625E6" />
+            <ComponentRef Id="cmp43946A4D6FBF81966B6D8FA41A091E0C" />
+            <ComponentRef Id="cmp8E967F010C6CBC1A3428000E8199174F" />
+            <ComponentRef Id="cmp4B5A4C51FA4B091E9E9800AEB9B41392" />
+            <ComponentRef Id="cmpF63CD806A6F21D59D9C8CF4BF79506F4" />
+            <ComponentRef Id="cmp7C82A8B04BC110B66C6C599D59C4FCF4" />
+            <ComponentRef Id="cmp533978CCA3B46AB0B6716F70F06771D9" />
+            <ComponentRef Id="cmp5F98866F4817AE8EFA38F4F0E13079E1" />
+            <ComponentRef Id="cmp5546DDC4B96B3F5618D5C33A318DF239" />
+            <ComponentRef Id="cmpCA117579A50F5F5F7A036CAE36B705D3" />
+            <ComponentRef Id="cmpC3CF6AA0AEB0468739A8E5CCB6AA56D0" />
+            <ComponentRef Id="cmp66FADF33F8C471C9D9A00BF0332AA63C" />
+            <ComponentRef Id="cmp86CBF9CFD8F42557935583463F33AFCA" />
+            <ComponentRef Id="cmp8F8342BD1332196776F5C51E541DC9F4" />
+            <ComponentRef Id="cmp876F3DD1E3D92B7D8E6B0661136DBE6F" />
+            <ComponentRef Id="cmp711415EDA4C9EEB8DEE5A9A2BBA22575" />
+            <ComponentRef Id="cmp001754AD8F32DA23D0509365A9DD977F" />
+            <ComponentRef Id="cmp2EC511C9B5FC2A7B70124146B7941B7F" />
+            <ComponentRef Id="cmp19765F3C3E1D8AF20D26A120F2F1485B" />
+            <ComponentRef Id="cmp953CFECBF439F678867E58734EDBFCA1" />
+            <ComponentRef Id="cmp6797A6A5F3DFCA6F17FAC15C6512E9EB" />
+            <ComponentRef Id="cmpE193AEF5D53E687DAD9D3FA4EA31FE4A" />
+            <ComponentRef Id="cmpC34C56A50B9C8AE092A74AA313ACF311" />
+            <ComponentRef Id="cmpBACCA6635023B4B59BEF10EDFD45CC50" />
+            <ComponentRef Id="cmp0A64698517D179B06B0454471C42A57B" />
+            <ComponentRef Id="cmp9283DB9C98BE7F77808CA5C7E0E5536D" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

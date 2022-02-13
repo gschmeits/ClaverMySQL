@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+   xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" >
+  <Product Id="*" Name="Boekhouding" Language="1043" Version="2.0.0.0" Manufacturer="St. Petrus Claver" UpgradeCode="6aa663f5-57d5-4413-b336-552222d325ba">
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Manufacturer="St. Petrus Claver" Description="Installeerd Boekhouding St. Petrus Claver 2016 - 2022" Keywords="Practice, Installer,MSI" Comments="(c) 2017 - 2022, G.H.M.H. Schmeits" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <!-- Directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="MyProgramDir" Name="St. Petrus Claver">
+          
+        </Directory>
+        <Directory Id="MyLanguage" Name="nl" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MyShortcutsDir" Name="St. Petrus Claver" />
+      </Directory>
+    </Directory>
+    <!--Components-->
+    <!--Start Menu Shortcuts-->
+    <DirectoryRef Id="MyShortcutsDir">
+      <Component Id="CMP_DocumentationShortcut" Guid="33741C82-30BF-41AF-8246-44A5DCFCF954">
+        <Shortcut Id="UitvoerStartMenuShortcut" Name="St. Petrus Claver" Description="Boekhouding" Target="[MyProgramDir]Boekhouding.exe" WorkingDirectory="MyProgramDir" />
+        <Shortcut Id="UninstallShortcut" Name="Deinstalleer Boekhouding" Description="Deinstalleerd Boekhouding Software" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+        <RemoveFolder Id="RemoveMyShortcutsDir" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\BoekhoudingSoftware" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <Icon Id="MyIcon" SourceFile="logo.ico" />
+    <Property Id="ARPPRODUCTICON" Value="MyIcon" />
+    <!--Features-->
+    <Feature Id="ProductFeature" Title="Main Product" Level="1">
+      <ComponentRef Id="CMP_DocumentationShortcut" />
+      <ComponentGroupRef Id="NewFilesGroup" />
+    </Feature>
+    <UI />
+  </Product>
+  <Fragment>
+    <ComponentGroup Id="cmpProductComponents" Directory="MyProgramDir">
+      <Component Id="cmpEmptyFolder" Guid="{292A233A-9C0E-479F-B83B-509F841B32D3}">
+        <CreateFolder>
+          <util:PermissionEx User="Users" GenericAll="yes"/>
+        </CreateFolder>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

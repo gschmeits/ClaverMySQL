@@ -1,0 +1,174 @@
+﻿<Page x:Class="ClaverMySQL.pg_DankIndividueel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClaverMySQL"
+      mc:Ignorable="d" 
+      d:DesignHeight="737" d:DesignWidth="1016" Background="AliceBlue"
+      Title="pg_DankIndividueel" Loaded="Page_Loaded" >
+    <Grid Background="{DynamicResource achtergrondkleur}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="75" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="1" Grid.ColumnSpan="2" />
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Border BorderThickness="1" BorderBrush="LightGray" Margin="15,5,15,5" CornerRadius="4" Grid.Row="3" Grid.ColumnSpan="2" />
+        <Label Content="Aanmaken dankbrieven individueel" 
+               HorizontalAlignment="Center" 
+               HorizontalContentAlignment="Center" 
+               VerticalAlignment="Center" 
+               FontSize="36" FontWeight="Bold" FontFamily="Lucida Calligraphy" Grid.ColumnSpan="2"></Label>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="20,15"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center">
+            <Label Content="Adresnummer:" />
+            <ComboBox Name="abonnees" 
+                      Height="24" 
+                      Margin="5,0"
+                      HorizontalAlignment="Center" 
+                      Width="70" 
+                      IsSynchronizedWithCurrentItem="False" 
+                      TabIndex="2" 
+                      DropDownClosed="abonnees_DropDownClosed" 
+                      GotFocus="abonnees_GotFocus" 
+                      LostFocus="abonnees_LostFocus" 
+                      IsEditable="True">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <VirtualizingStackPanel IsVirtualizing="True" IsItemsHost="True"  />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <Label Content="Naam:"/>
+            <ComboBox Name="abonNaam" 
+                      Height="24" 
+                      
+                      HorizontalAlignment="Center" 
+                      Width="350" 
+                      IsSynchronizedWithCurrentItem="False" 
+                      TabIndex="2" 
+                      DropDownClosed="abonNaam_DropDownClosed" 
+                      GotFocus="abonNaam_GotFocus" 
+                      LostFocus="abonNaam_LostFocus" 
+                      IsEditable="True">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <VirtualizingStackPanel IsVirtualizing="True" IsItemsHost="True"  />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <Label Content="Email:"/>
+            <ComboBox Name="abonMail" 
+                      Height="24" 
+                      HorizontalAlignment="Center" 
+                      Width="350" 
+                      IsSynchronizedWithCurrentItem="False" 
+                      TabIndex="2" 
+                      DropDownClosed="abonEmail_DropDownClosed" 
+                      GotFocus="abonEmail_GotFocus" 
+                      LostFocus="abonEmail_LostFocus" 
+                      IsEditable="True" DataContextChanged="AbonMail_DataContextChanged">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <VirtualizingStackPanel IsVirtualizing="True" IsItemsHost="True"  />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Name="StackPanelEmail" 
+            Orientation="Horizontal"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="20,55, 20,5"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+            Visibility="Visible">
+            <CheckBox Name="CheckBoxEmail"
+                Content="Via Email"
+                      VerticalAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      FlowDirection="RightToLeft"
+                      Margin="0,0,50,0" Checked="CheckBoxEmail_Checked"/>
+            <Label Name="LabelmailTemp" Content="MailTemplates" Visibility="Visible" />
+            <ComboBox Name="mailTemp" 
+                      Height="24" 
+                      HorizontalAlignment="Center" 
+                      Width="350" 
+                      IsSynchronizedWithCurrentItem="False" 
+                      TabIndex="2" 
+                      LostFocus="abonEmail_LostFocus"
+                      Visibility="Visible"
+                      IsEditable="True" DropDownClosed="MailTemp_DropDownClosed">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <VirtualizingStackPanel IsVirtualizing="True" IsItemsHost="True"  />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                <WebBrowser Height="100" Width="100"/>
+            </ComboBox>
+        </StackPanel>
+        <WebBrowser Name="webBrowser1"
+            Grid.Row="2"
+            Grid.ColumnSpan="2" 
+            Margin="20,10"
+            Visibility="Hidden" />
+        <Button Name="stelSamen" Grid.Row="3" 
+                Height="36" 
+                Width="200" 
+                Content="Gegevens genereren per brief" 
+                Style="{DynamicResource MyButtonStyle}" 
+                Background="#FFDDDDDD" 
+                Click="stelSamen_Click" 
+                Visibility="Visible" 
+                Grid.Column="0" 
+                HorizontalAlignment="Right"
+                Margin="30,20,0,19" />
+        <Button Name="stelEmail" Grid.Row="3" 
+                Height="36" 
+                Width="200" 
+                Content="Gegevens genereren per e-mail" 
+                Style="{DynamicResource MyButtonStyle}" 
+                Background="#FFDDDDDD" 
+                Visibility="Visible" 
+                Grid.Column="0" 
+                IsEnabled="False"
+                HorizontalAlignment="Left"
+                Margin="30,20,0,19" Click="StelEmail_Click" />
+        <StackPanel Name="melding" Grid.Row="1" Grid.ColumnSpan="2" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Orientation="Vertical" />
+        <Button Name="schermSluiten" Grid.Row="3" Grid.ColumnSpan="2" 
+                Style="{DynamicResource MyButtonStyle}" Background="#FFDDDDDD"  
+                Content="Scherm sluiten" Margin="250,0,25,0" Height="36" 
+                Width="100" HorizontalAlignment="Right" Click="schermSlujiten_Click" BorderThickness="0,0,50,0" ></Button>
+        <TextBlock Name="TextBlockID" 
+           Grid.Row="3" 
+           Width="100"
+           Height="24"
+           Visibility="Hidden"
+           HorizontalAlignment="Left"
+           Margin="30,0,0,0"
+           />
+        <TextBlock Name="TextBlockName" 
+                   Grid.Row="3" 
+                   Width="100"
+                   Height="24"
+                   Visibility="Hidden"
+                   HorizontalAlignment="Left"
+                   Margin="130,0,0,0"
+        />
+    </Grid>
+</Page>

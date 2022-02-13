@@ -1,0 +1,3 @@
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="overzicht" hostitem:className="Blad3" hostitem:identifier="Blad3" hostitem:primaryCookie="Blad3" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="3" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:hostControl hostitem:name="Blad3!Print_Titles" hostitem:identifier="Blad3_Print_Titles" hostitem:type="Microsoft.Office.Tools.Excel.NamedRange" hostitem:primaryCookie="Blad3!Print_Titles" hostitem:extenderCookie="" hostitem:modifier="Internal" />
+</hostitem:hostItem>

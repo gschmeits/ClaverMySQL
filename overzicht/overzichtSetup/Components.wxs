@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp0DDDCD77C8052D7A6C8B56414A214EB2" Guid="{37B8BA74-7C46-47F3-941C-08949EE8BB89}">
+                <File Id="fil99336B918CD15A837B4F4AA17D445BDD" KeyPath="yes" Source="$(var.AddinFiles)\ConfigData.xml" />
+            </Component>
+            <Component Id="cmp6AF2ED23428106FE5D75EDD45FA2B59D" Guid="{E312650A-A176-44B2-95F4-DD203FC44AF3}">
+                <File Id="fil6DCD4BC3056987145A1481FE7D418DC2" KeyPath="yes" Source="$(var.AddinFiles)\Domain.dll" />
+            </Component>
+            <Component Id="cmpD7ECE1DCFC06DFFFE0602E295D324886" Guid="{82C7A88A-758C-4748-9F23-7D96E3AFFCDF}">
+                <File Id="fil91F51DB6EB76E62AFF27456C0522BE19" KeyPath="yes" Source="$(var.AddinFiles)\Domain.pdb" />
+            </Component>
+            <Component Id="cmpC561A1E22AC1C60399681813AE7149CC" Guid="{EECF8544-DE86-44BE-8118-84717AAC30C0}">
+                <Class Id="{1530097E-343C-3CC9-9880-9B9BF2FC5966}" Context="InprocServer32" Description="overzicht.ClaverRibbon" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="overzicht.ClaverRibbon" Description="overzicht.ClaverRibbon" />
+                </Class>
+                <Class Id="{7053C11E-2A39-358B-B6BE-5D21AD4CF281}" Context="InprocServer32" Description="overzzicht.Ribbon" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="overzzicht.Ribbon" Description="overzzicht.Ribbon" />
+                </Class>
+                <File Id="fil8A5B3926A1BB6A4D9E023CB2714A6402" KeyPath="yes" Source="$(var.AddinFiles)\maandoverzicht.dll" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32\1.0.1.1" Name="Class" Value="overzicht.ClaverRibbon" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32\1.0.1.1" Name="Assembly" Value="maandoverzicht, Version=1.0.1.1, Culture=neutral, PublicKeyToken=92c799e4abcda682" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32\1.0.1.1" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32\1.0.1.1" Name="CodeBase" Value="file:///[#fil8A5B3926A1BB6A4D9E023CB2714A6402]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32" Name="Class" Value="overzicht.ClaverRibbon" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32" Name="Assembly" Value="maandoverzicht, Version=1.0.1.1, Culture=neutral, PublicKeyToken=92c799e4abcda682" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1530097E-343C-3CC9-9880-9B9BF2FC5966}\InprocServer32" Name="CodeBase" Value="file:///[#fil8A5B3926A1BB6A4D9E023CB2714A6402]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32\1.0.1.1" Name="Class" Value="overzzicht.Ribbon" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32\1.0.1.1" Name="Assembly" Value="maandoverzicht, Version=1.0.1.1, Culture=neutral, PublicKeyToken=92c799e4abcda682" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32\1.0.1.1" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32\1.0.1.1" Name="CodeBase" Value="file:///[#fil8A5B3926A1BB6A4D9E023CB2714A6402]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32" Name="Class" Value="overzzicht.Ribbon" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32" Name="Assembly" Value="maandoverzicht, Version=1.0.1.1, Culture=neutral, PublicKeyToken=92c799e4abcda682" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7053C11E-2A39-358B-B6BE-5D21AD4CF281}\InprocServer32" Name="CodeBase" Value="file:///[#fil8A5B3926A1BB6A4D9E023CB2714A6402]" Type="string" Action="write" />
+            </Component>
+            <Component Id="cmpE0CF10AC0633172DD3674FEC5924438C" Guid="{2E9F094A-3590-4BDA-A619-E9025C2587DA}">
+                <File Id="filAF99578230902B8115456F9E14A34B5B" KeyPath="yes" Source="$(var.AddinFiles)\maandoverzicht.dll.manifest" />
+            </Component>
+            <Component Id="cmpA4F769F74662FD22A24AD0F7D33E1DE1" Guid="{5CF06A83-63C7-4F96-9230-FCFF72DBA6F4}">
+                <File Id="filFB5A22A5858A0E3E6D89A109326FAC30" KeyPath="yes" Source="$(var.AddinFiles)\maandoverzicht.pdb" />
+            </Component>
+            <Component Id="cmp70A0BCE71DDC12A65D122A632CE851C5" Guid="{03FB47F2-828D-4C55-BBC1-7B660381E167}">
+                <File Id="filE41A2E17A9BED1A5BA498613678C8671" KeyPath="yes" Source="$(var.AddinFiles)\maandoverzicht.vsto" />
+            </Component>
+            <Component Id="cmp0EA3FA02A1AA452BEFA1CB5C06425DFA" Guid="{04E927D8-1F42-47A2-BA79-4B761AA2C71E}">
+                <File Id="filAEFDFA216912B90AB0A004F721D0FC69" KeyPath="yes" Source="$(var.AddinFiles)\maandoverzicht.xlsx" />
+            </Component>
+            <Component Id="cmpB2B17ACEF2700EE632E3235C9A7F31D6" Guid="{6816F725-4B86-46FB-B813-DA6C83C746AA}">
+                <File Id="fil7DD976346409C4749E278EBDA66F3C64" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.Common.dll" />
+            </Component>
+            <Component Id="cmpADCE48FF76E53DAC76A025E7648FD219" Guid="{84BB2B08-57CB-4666-930F-0EB587E1213A}">
+                <File Id="filC534544B7397ACDA78680FA5A82ABBDC" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" />
+            </Component>
+            <Component Id="cmp7688EF74DC3F4287CC0F8E45C28361D3" Guid="{DA7673C4-B400-4C91-A202-5848FB27751E}">
+                <File Id="fil89563B50BBA53BB67252B47B8256AD06" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.dll" />
+            </Component>
+            <Component Id="cmpCDE7AEA1B703BE1E0F8C94E8761D97CC" Guid="{3A5EAEAB-C524-4643-A6C4-CBEA6E5E3AB5}">
+                <File Id="fil4E6438A8227CC959ADF904270BA6383A" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.Excel.dll" />
+            </Component>
+            <Component Id="cmpC9BEEDCA39D8E1C7EDED02C47F3B8CA0" Guid="{42ADBE43-0166-4ECD-B7F4-D6DAFF59EB93}">
+                <File Id="fil3C7349D1821531A0DFD537E77AF037C4" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll" />
+            </Component>
+            <Component Id="cmpEA6C7049A237974135B17BC5B0CC17F8" Guid="{2A1B2E97-D827-4B29-A985-84FB7C6C5FB6}">
+                <File Id="fil51AD879A1A5DB37DE3A0390B97234DAB" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.Office.Tools.v4.0.Framework.dll" />
+            </Component>
+            <Component Id="cmpF8C27209FCD62C606A43AFAE70D21064" Guid="{1BC1B99F-4EDC-4C98-A021-F18BEB301563}">
+                <File Id="fil998E848FF584F739B76BBFEF15DD79F6" KeyPath="yes" Source="$(var.AddinFiles)\Microsoft.VisualStudio.Tools.Applications.Runtime.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MyComponentGroup">
+            <ComponentRef Id="cmp0DDDCD77C8052D7A6C8B56414A214EB2" />
+            <ComponentRef Id="cmp6AF2ED23428106FE5D75EDD45FA2B59D" />
+            <ComponentRef Id="cmpD7ECE1DCFC06DFFFE0602E295D324886" />
+            <ComponentRef Id="cmpC561A1E22AC1C60399681813AE7149CC" />
+            <ComponentRef Id="cmpE0CF10AC0633172DD3674FEC5924438C" />
+            <ComponentRef Id="cmpA4F769F74662FD22A24AD0F7D33E1DE1" />
+            <ComponentRef Id="cmp70A0BCE71DDC12A65D122A632CE851C5" />
+            <ComponentRef Id="cmp0EA3FA02A1AA452BEFA1CB5C06425DFA" />
+            <ComponentRef Id="cmpB2B17ACEF2700EE632E3235C9A7F31D6" />
+            <ComponentRef Id="cmpADCE48FF76E53DAC76A025E7648FD219" />
+            <ComponentRef Id="cmp7688EF74DC3F4287CC0F8E45C28361D3" />
+            <ComponentRef Id="cmpCDE7AEA1B703BE1E0F8C94E8761D97CC" />
+            <ComponentRef Id="cmpC9BEEDCA39D8E1C7EDED02C47F3B8CA0" />
+            <ComponentRef Id="cmpEA6C7049A237974135B17BC5B0CC17F8" />
+            <ComponentRef Id="cmpF8C27209FCD62C606A43AFAE70D21064" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

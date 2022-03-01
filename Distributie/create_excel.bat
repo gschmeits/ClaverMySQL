@@ -1,0 +1,1 @@
+heat.exe dir "D:\Projects\ClaverMySQL\overzicht\overzicht\bin\Release" -dr MyProgramDir -cg NewFilesGroup -gg -sfrag -srd -var var.AddinFiles -out "D:\Projects\ClaverMySQL\overzicht\overzichtSetup\Components.wxs" 

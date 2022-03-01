@@ -2,31 +2,30 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
         <DirectoryRef Id="MyProgramDir">
-            <Component Id="cmpD101F9994FAAC6838AFF9A4494AA7A9A" Guid="{6D87F5AC-7798-478C-AD32-05AE08ABCF83}">
+            <Component Id="cmpD101F9994FAAC6838AFF9A4494AA7A9A" Guid="{20D14D9D-63BF-4EBF-8346-F7381803A4E5}">
                 <File Id="filB8D89DDF0BDCC957D53CAE7623CBD709" KeyPath="yes" Source="$(var.BestandsLocatie)\BouncyCastle.Crypto.dll" />
             </Component>
-            <Component Id="cmp9A9BB6349E8F5924B96550A8F23BE75E" Guid="{3BCE1320-29A8-42EF-A631-D63809FC3B76}">
+            <Component Id="cmp9A9BB6349E8F5924B96550A8F23BE75E" Guid="{AB61B3EB-9503-4A95-918A-C41D057DD6D0}">
                 <File Id="fil98FBB76FCDF59A3E3197E0A2217CE5F0" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.exe" />
             </Component>
-            <Component Id="cmpA04E9A3D1B2C36E9BDFC4BF5DA4D71D4" Guid="{5F678839-0C71-4583-B911-18409F51CE5F}">
+            <Component Id="cmpA04E9A3D1B2C36E9BDFC4BF5DA4D71D4" Guid="{71605305-BCDF-4814-9A2B-185676B9DA78}">
                 <File Id="filDA45519D2AB767F523E3793D41DE50A0" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.exe.config" />
             </Component>
-            <Component Id="cmp56D39D2FE63572AEAC96BAB1FF3BB2D9" Guid="{E242773E-C976-43EE-A7F0-209783C2F233}">
+            <Component Id="cmp56D39D2FE63572AEAC96BAB1FF3BB2D9" Guid="{C9C93CAC-63DB-40C8-B63F-6B1AACFA3259}">
                 <File Id="fil12757264E09FA2BC44DDA7814081C774" KeyPath="yes" Source="$(var.BestandsLocatie)\ClaverMySQL.pdb" />
             </Component>
-            <Component Id="cmp2DB4568992F4D5CD61A5E6A75D3C5836" Guid="{49F3DFFB-29B1-451D-AFC9-889DC68E0799}">
+			<!--
+            <Component Id="cmp2DB4568992F4D5CD61A5E6A75D3C5836" Guid="{56970603-A208-4658-A761-9CC1C7BA2718}">
                 <File Id="filE5AEFFF39EDB2CC0A0C9961E546E437E" KeyPath="yes" Source="$(var.BestandsLocatie)\ConfigData.xml" />
             </Component>
-            <Component Id="cmp5A1D853C31755CB3F6FD7C3DF8B25D41" Guid="{35B07EAC-4634-42AD-AF0F-AF5C0D8D69C8}">
-                <File Id="fil1D2FBA73C8525C3B9103D6C2BC68B1D6" KeyPath="yes" Source="$(var.BestandsLocatie)\connect.xml" />
-            </Component>
-            <Component Id="cmpF742CFD77AD1ECF252CE6E010611A626" Guid="{E4879ACB-49ED-42EC-9626-CD0A4945556D}">
+			-->
+            <Component Id="cmpF742CFD77AD1ECF252CE6E010611A626" Guid="{144F04C5-9C2B-4DC6-A374-84C6A07682F5}">
                 <File Id="fil03CB6F80810515AE683A4059AB33E4F8" KeyPath="yes" Source="$(var.BestandsLocatie)\DataStorage.dll" />
             </Component>
-            <Component Id="cmpD3494B20E472D86DB2FCDE81D94F38D4" Guid="{9D4550DA-4402-4FC1-B605-80301CA1314F}">
+            <Component Id="cmpD3494B20E472D86DB2FCDE81D94F38D4" Guid="{ECF34321-A861-45CD-A2AA-3DBD897CE73D}">
                 <File Id="fil8CBD703A08ECB4FEEDCAC8D6D2FE9E38" KeyPath="yes" Source="$(var.BestandsLocatie)\DataStorage.pdb" />
             </Component>
-            <Component Id="cmp0E564A9E6DC35AE2EC34169ED9290B6D" Guid="{BE27C857-2F0A-414D-B652-866E4D0A1F29}">
+            <Component Id="cmp0E564A9E6DC35AE2EC34169ED9290B6D" Guid="{29295792-ADED-47E9-885F-5F758DA912BD}">
                 <Class Id="{0032F712-43A4-3C6A-956D-5D786FB0B155}" Context="InprocServer32" Description="Google.Protobuf.WellKnownTypes.BoolValue" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="Google.Protobuf.WellKnownTypes.BoolValue" Description="Google.Protobuf.WellKnownTypes.BoolValue" />
                 </Class>
@@ -370,131 +369,130 @@
                 <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
                 <RegistryValue Root="HKCR" Key="Record\{C24BD03A-4D02-3CE7-8E10-12839EF4CAF6}\3.6.1.0" Name="CodeBase" Value="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Google.Protobuf/v4.0_3.6.1.0__a7d26565bac4d604/Google.Protobuf.dll" Type="string" Action="write" />
             </Component>
-            <Component Id="cmpA467743F6CBE69533AE43E36E3D47F42" Guid="{60F8D980-E6C4-4539-9EFB-405A26107202}">
+            <Component Id="cmpA467743F6CBE69533AE43E36E3D47F42" Guid="{BEFA97A2-E03D-4AA3-8057-CC94088BC8E1}">
                 <File Id="fil76641FB8B5AD7BBF76690FB6ED2DAEC1" KeyPath="yes" Source="$(var.BestandsLocatie)\MySql.Data.dll" />
             </Component>
-            <Component Id="cmp5048E90285D64D22583CC9001A9A90DB" Guid="{75659309-DFFD-451B-9359-E40D4DB062E0}">
+            <Component Id="cmp5048E90285D64D22583CC9001A9A90DB" Guid="{BB3A85A1-AE54-4B9C-BD3C-F75B86275CBD}">
                 <File Id="fil354B49D6C562040FB34730111FD77AC0" KeyPath="yes" Source="$(var.BestandsLocatie)\MySql.Data.xml" />
             </Component>
-            <Component Id="cmp556130E34358A1510E662B67E5405124" Guid="{8AA48A36-319E-4324-BB57-F1AF7FD3C013}">
-                <File Id="fil598B22546E4092DC2AB2B64BA2C6F40B" KeyPath="yes" Source="$(var.BestandsLocatie)\Renci.SshNet.dll" />
-            </Component>
-            <Component Id="cmp10340E4A99A92EF4009EC6DA6632FAE2" Guid="{2B95BD61-30CA-41BA-B806-7238D09B785B}">
+			<!--
+	<Component Id="cmp10340E4A99A92EF4009EC6DA6632FAE2" Guid="{F623A4B1-8A5D-4A69-90F7-797CEF5C49E1}">
                 <File Id="fil55F5D7F1D3D17322001CCD2CB6C6FC43" KeyPath="yes" Source="$(var.BestandsLocatie)\settings.xml" />
             </Component>
-            <Component Id="cmp2B714EFEC87C12BA608CFC2499ABFA8E" Guid="{778EA402-3BE3-489F-BCA6-CBC033B0018D}">
+			-->
+            <Component Id="cmp2B714EFEC87C12BA608CFC2499ABFA8E" Guid="{DE747D7E-6AFD-4A55-8FB7-C73EB240D208}">
                 <File Id="fil25FFAF315EDADDC591AD19FDF267E3FF" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.exe" />
             </Component>
-            <Component Id="cmpD45FF048B68BF9EE7C3C1CE3A9916A11" Guid="{2D0B23AE-15FA-49CF-B09E-0F0C82F2BD8A}">
+            <Component Id="cmpD45FF048B68BF9EE7C3C1CE3A9916A11" Guid="{B6C49794-C2E0-4F02-840E-1302A9E98A5C}">
                 <File Id="fil148C80E0985B52C618273ED8D1E517C1" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.exe.config" />
             </Component>
-            <Component Id="cmp62DD37905CB40994653EE7E2A58AF3C0" Guid="{1AD136E5-3CAD-4C32-886F-F120353A87FF}">
+            <Component Id="cmp62DD37905CB40994653EE7E2A58AF3C0" Guid="{3A61BAF1-3AF4-4937-8BD2-6A62B563B605}">
                 <File Id="fil884E35799EDDAA8770506E5D52C0285B" KeyPath="yes" Source="$(var.BestandsLocatie)\WPF WYSIWYG HTML Editor.pdb" />
             </Component>
             <Directory Id="dir75DC31AE11B74CF41B1F249B4772B374" Name="Images">
-                <Component Id="cmp9AC0B037570A0709CC012C817D2F3EF8" Guid="{DC9151D4-98D6-4ED9-977F-3D5F1BAB82A6}">
+                <Component Id="cmp9AC0B037570A0709CC012C817D2F3EF8" Guid="{7FBBF2FD-6383-4A69-88FB-6A23FA917393}">
                     <File Id="fil1236FD49C47AA34150A2D01EC8E173DD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\backcolor.png" />
                 </Component>
-                <Component Id="cmpC0F2DE6108086E11B68AB138D2D2DA42" Guid="{0460B518-C234-46F8-81F9-CB8A7B496DE4}">
+                <Component Id="cmpC0F2DE6108086E11B68AB138D2D2DA42" Guid="{AC98EF01-BDE0-4E87-B146-70DDD262AB7E}">
                     <File Id="fil50FC2E66A1ABE58A0759470BF390591A" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\bold.png" />
                 </Component>
-                <Component Id="cmp92BBE39B299638914DB6A98A52AC326B" Guid="{CCB2DDEB-5EE7-4080-9BBB-7359B0345711}">
+                <Component Id="cmp92BBE39B299638914DB6A98A52AC326B" Guid="{17D5556C-36F9-4636-B57E-31317EE6D1ED}">
                     <File Id="fil552B548AD91B663C413F13A2EAF939AD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\box.png" />
                 </Component>
-                <Component Id="cmp287187E9C8455CEE9C7C344498770B28" Guid="{60D80F23-9B7B-4D4D-BF4A-878F49A86B6B}">
+                <Component Id="cmp287187E9C8455CEE9C7C344498770B28" Guid="{349207C8-084E-43B3-93C0-85A7B383494F}">
                     <File Id="fil6AE7EAFE14AAE884D5806E608BFCFEA9" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\bullets.png" />
                 </Component>
-                <Component Id="cmp27528E01454E7540087AFBFFEEDE7AA1" Guid="{E08B946A-53BB-4AF3-AB46-2F1DB96E42AA}">
+                <Component Id="cmp27528E01454E7540087AFBFFEEDE7AA1" Guid="{5DFE81B8-2B37-428B-BF78-4688302C9D15}">
                     <File Id="filD49867A1998270036127E0E1582BC55C" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\center.png" />
                 </Component>
-                <Component Id="cmp36402998C90225DFD006D8D07F84ABF6" Guid="{D8CAA44E-32CF-4F05-B6AF-DDBCF1A5601E}">
+                <Component Id="cmp36402998C90225DFD006D8D07F84ABF6" Guid="{30F45325-ADB8-4ADB-B73B-37351689DB28}">
                     <File Id="fil8641B4EE5F688AF16406DD8579475B4F" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\center2.png" />
                 </Component>
-                <Component Id="cmp443AD79467F72E5516FD89CF76016511" Guid="{B08CF57D-3839-41E6-BDE3-88D0C85C70B4}">
+                <Component Id="cmp443AD79467F72E5516FD89CF76016511" Guid="{17292F4F-678A-4C58-9FCD-C17718F09179}">
                     <File Id="filA23B6E9FD4FC6F1278CEA441F8C79F3A" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\circle.png" />
                 </Component>
-                <Component Id="cmpA4D08F7B192555A3C8D0E0916FE44E16" Guid="{EE71317A-E06E-4E9E-9FE9-1327C924E36F}">
+                <Component Id="cmpA4D08F7B192555A3C8D0E0916FE44E16" Guid="{D08F0EEA-A33B-4D67-B586-CC3B00E8678D}">
                     <File Id="fil456F946D0B09F2F2E488A9F4EB582640" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Color.png" />
                 </Component>
-                <Component Id="cmpFDF8B3C89863CEFD4F6514282BBA1741" Guid="{E5EE8535-720C-4293-93A7-B850A6F1E899}">
+                <Component Id="cmpFDF8B3C89863CEFD4F6514282BBA1741" Guid="{1BCC9A50-DA80-4B80-96E0-6BC4195BBE08}">
                     <File Id="filECFC1A7FD2C321C8FF4051E558281E8F" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\cross.png" />
                 </Component>
-                <Component Id="cmp0DF7B34F712467EBDFD881D45EC625E6" Guid="{D4FB0C4C-57C7-4134-A1A7-FA21E16D90F4}">
+                <Component Id="cmp0DF7B34F712467EBDFD881D45EC625E6" Guid="{05DBB6D7-20FC-49D8-865A-1725AE80FBBB}">
                     <File Id="fil61164460E2B4B43B56DF4DC1DCDC8F26" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Editor.png" />
                 </Component>
-                <Component Id="cmp43946A4D6FBF81966B6D8FA41A091E0C" Guid="{3299D64A-3234-41E0-BBE4-3BF1F38FC073}">
+                <Component Id="cmp43946A4D6FBF81966B6D8FA41A091E0C" Guid="{39BCB1B8-FA1D-45CB-82FA-22BA32047972}">
                     <File Id="fil7975C7F8797669461F328246F6A02688" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\gray.png" />
                 </Component>
-                <Component Id="cmp8E967F010C6CBC1A3428000E8199174F" Guid="{F1723B65-DBCA-4D51-A64E-E83949FEB8B0}">
+                <Component Id="cmp8E967F010C6CBC1A3428000E8199174F" Guid="{FE8E2503-3563-4BF6-95F3-FE7B418B2847}">
                     <File Id="fil07C8837D2DD0F36725B48E051CAE4FA1" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\html.png" />
                 </Component>
-                <Component Id="cmp4B5A4C51FA4B091E9E9800AEB9B41392" Guid="{0831794B-B4E8-4FD8-B287-34857DF5129E}">
+                <Component Id="cmp4B5A4C51FA4B091E9E9800AEB9B41392" Guid="{6B6F9E00-0C4D-4846-A7E4-1DA333A34B47}">
                     <File Id="filC28B7273083C94F1C02C5159B29EA4BE" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\ident.png" />
                 </Component>
-                <Component Id="cmpF63CD806A6F21D59D9C8CF4BF79506F4" Guid="{AE4503ED-B65A-4BC5-AA2C-967A4B3A9C04}">
+                <Component Id="cmpF63CD806A6F21D59D9C8CF4BF79506F4" Guid="{C7C874E0-0C96-4E87-B890-FD4F767FB07A}">
                     <File Id="fil1325D354D8C8D7A21EE4CD3A7B45E8B7" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\image.png" />
                 </Component>
-                <Component Id="cmp7C82A8B04BC110B66C6C599D59C4FCF4" Guid="{26859B65-5F51-40C8-8856-92AC63D93AE6}">
+                <Component Id="cmp7C82A8B04BC110B66C6C599D59C4FCF4" Guid="{BB701D1D-4492-44EC-90F5-E8DD80FB03F6}">
                     <File Id="filA9B60F9C0D2B8FD8F9FFDC922AF401FD" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\italic.png" />
                 </Component>
-                <Component Id="cmp533978CCA3B46AB0B6716F70F06771D9" Guid="{B3868B5B-DD3F-4542-A6A5-85733FAC786A}">
+                <Component Id="cmp533978CCA3B46AB0B6716F70F06771D9" Guid="{9BE0BF69-C526-4E48-8AFC-50502209D7D3}">
                     <File Id="fil54FE1CE8E1F051690DCEB55DE5E747FE" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\LeftAlign.png" />
                 </Component>
-                <Component Id="cmp5F98866F4817AE8EFA38F4F0E13079E1" Guid="{A4654296-8B00-4310-87C5-E9F59728A2B8}">
+                <Component Id="cmp5F98866F4817AE8EFA38F4F0E13079E1" Guid="{DB9D4B3B-8CDF-4C85-BE13-1522DD033B6D}">
                     <File Id="fil960F5C829AC1F3DEBC590568C626D531" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\line.png" />
                 </Component>
-                <Component Id="cmp5546DDC4B96B3F5618D5C33A318DF239" Guid="{A7023B7D-8A69-47A7-A349-E0AA9D34FB17}">
+                <Component Id="cmp5546DDC4B96B3F5618D5C33A318DF239" Guid="{3E1E7509-6251-4D64-B77C-5D109D67063A}">
                     <File Id="fil206A1104C335060C9EFDBE3198EFD53B" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\link.png" />
                 </Component>
-                <Component Id="cmpCA117579A50F5F5F7A036CAE36B705D3" Guid="{5F4260E6-F6D0-46A6-B7F5-161357A22E2D}">
+                <Component Id="cmpCA117579A50F5F5F7A036CAE36B705D3" Guid="{995BCFAE-9800-4467-BE7B-46F3007066A1}">
                     <File Id="filB4CB9E5F22C7BA356663D6A7C4E8B1ED" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo.ico" />
                 </Component>
-                <Component Id="cmpC3CF6AA0AEB0468739A8E5CCB6AA56D0" Guid="{96E6ADB5-A4A5-4960-9971-99519681D57E}">
+                <Component Id="cmpC3CF6AA0AEB0468739A8E5CCB6AA56D0" Guid="{3FC5787F-DCF3-4DD0-947D-07CEE4A53AAA}">
                     <File Id="filF5E9E22CC30E28B9F0BF217D4E031C69" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo.png" />
                 </Component>
-                <Component Id="cmp66FADF33F8C471C9D9A00BF0332AA63C" Guid="{E908626D-8B42-470C-8A2E-5BD80049DF26}">
+                <Component Id="cmp66FADF33F8C471C9D9A00BF0332AA63C" Guid="{F5A400F8-4094-4D8A-A861-54158F7AD820}">
                     <File Id="fil99C9BB3442BB07642D3BC5F2263067F3" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\logo1.png" />
                 </Component>
-                <Component Id="cmp86CBF9CFD8F42557935583463F33AFCA" Guid="{4F9D7BE2-68DD-4A45-A76A-1454FE32B0F8}">
+                <Component Id="cmp86CBF9CFD8F42557935583463F33AFCA" Guid="{96335F61-294A-44C0-A23E-CE7284110665}">
                     <File Id="fil6A604E92122DB36D8ECAA01D88F017D7" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\MTL.ico" />
                 </Component>
-                <Component Id="cmp8F8342BD1332196776F5C51E541DC9F4" Guid="{0165DD5F-83AE-46ED-B26C-A75E8148CEBF}">
+                <Component Id="cmp8F8342BD1332196776F5C51E541DC9F4" Guid="{4DD19AF2-6434-4F7B-8E14-EE6FEBE7A9CE}">
                     <File Id="fil47A1CCF49FFB3DF6F5B120125AA61B45" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\new.png" />
                 </Component>
-                <Component Id="cmp876F3DD1E3D92B7D8E6B0661136DBE6F" Guid="{DC51E1CB-10E8-4378-B5DE-459EEEB6F776}">
+                <Component Id="cmp876F3DD1E3D92B7D8E6B0661136DBE6F" Guid="{DDB58A93-D292-4BA4-AF8E-55C2AFA9F7A7}">
                     <File Id="filB303D91D578053DF3E7EBE02654F7B81" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Numbered.png" />
                 </Component>
-                <Component Id="cmp711415EDA4C9EEB8DEE5A9A2BBA22575" Guid="{360D86CF-AFCE-42E2-BAE1-16B0D2D5EF7E}">
+                <Component Id="cmp711415EDA4C9EEB8DEE5A9A2BBA22575" Guid="{C24013B4-D4FB-4469-9653-8A1F1D42B6F3}">
                     <File Id="filF2C3EB7A1162DD3D14594F7964A68CD5" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\open.png" />
                 </Component>
-                <Component Id="cmp001754AD8F32DA23D0509365A9DD977F" Guid="{A8683E25-4D36-44F0-BDAB-8A01A81E4AC4}">
+                <Component Id="cmp001754AD8F32DA23D0509365A9DD977F" Guid="{AA7C9691-D875-409C-8F3E-3D087BC4D061}">
                     <File Id="fil3909EAD7654D57DE7CD0B73CBF23F755" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\OutIdent.png" />
                 </Component>
-                <Component Id="cmp2EC511C9B5FC2A7B70124146B7941B7F" Guid="{CC890649-344E-413E-9822-2D45208EEC55}">
+                <Component Id="cmp2EC511C9B5FC2A7B70124146B7941B7F" Guid="{ADE8AD4F-D298-4F24-9941-AEE843E2B3BD}">
                     <File Id="filA0EDCF765E678AE740055E8204039506" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\RightAlign.png" />
                 </Component>
-                <Component Id="cmp19765F3C3E1D8AF20D26A120F2F1485B" Guid="{E794F7FE-6C64-4823-A61A-D671B483F47B}">
+                <Component Id="cmp19765F3C3E1D8AF20D26A120F2F1485B" Guid="{0FCD9DBB-927E-4DA0-972D-87F3D222A11B}">
                     <File Id="fil546EF704655A14F00DA07A2DBE7AC4BA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\save.png" />
                 </Component>
-                <Component Id="cmp953CFECBF439F678867E58734EDBFCA1" Guid="{F73CBF75-73BE-42CB-AF78-71A71F797698}">
+                <Component Id="cmp953CFECBF439F678867E58734EDBFCA1" Guid="{A532082F-A817-4D14-8D64-5D622EED265C}">
                     <File Id="fil0328C8AA7659C83B569B17F4828C017E" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Save_6530_32.bmp" />
                 </Component>
-                <Component Id="cmp6797A6A5F3DFCA6F17FAC15C6512E9EB" Guid="{155648B9-D849-4943-A632-111C714C06D9}">
+                <Component Id="cmp6797A6A5F3DFCA6F17FAC15C6512E9EB" Guid="{59918E0A-2973-46C7-8236-7262E2ED0FDE}">
                     <File Id="filCC74DD088F61C3B8A8D6682FC124A7DA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\sspc-logo.jpg" />
                 </Component>
-                <Component Id="cmpE193AEF5D53E687DAD9D3FA4EA31FE4A" Guid="{BE066BA7-5A72-4967-B618-FEBB6697860E}">
+                <Component Id="cmpE193AEF5D53E687DAD9D3FA4EA31FE4A" Guid="{95297565-8834-4024-823C-B0F80269F3F6}">
                     <File Id="fil188A4502929AE8F9F73B92F6869A96E6" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\sspc-logo_150.jpg" />
                 </Component>
-                <Component Id="cmpC34C56A50B9C8AE092A74AA313ACF311" Guid="{3866863E-E1B3-41A4-92B2-DAECF4236398}">
+                <Component Id="cmpC34C56A50B9C8AE092A74AA313ACF311" Guid="{75E58E55-DE98-4FC5-AE1B-EDF063119B68}">
                     <File Id="filEF90935E89BAE3710EE7E425A00730E3" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\stichteres.png" />
                 </Component>
-                <Component Id="cmpBACCA6635023B4B59BEF10EDFD45CC50" Guid="{BA073ED1-EFB5-4EF7-A5DD-8ABC39C3CDBF}">
+                <Component Id="cmpBACCA6635023B4B59BEF10EDFD45CC50" Guid="{A898E07E-2F23-4C6A-99DF-698AF37F9618}">
                     <File Id="filA2C7E6D34C664AD7F817DE9CAF1EB114" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\Tjek.png" />
                 </Component>
-                <Component Id="cmp0A64698517D179B06B0454471C42A57B" Guid="{C85EFE3D-9FD5-45D3-9B61-7A98964FBC86}">
+                <Component Id="cmp0A64698517D179B06B0454471C42A57B" Guid="{BE13B282-5DFE-4E24-BB10-889BB5A8F015}">
                     <File Id="fil899341912335AC07E9287EF1F23C1FAA" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\UnderLine.png" />
                 </Component>
-                <Component Id="cmp9283DB9C98BE7F77808CA5C7E0E5536D" Guid="{DE99CED6-4400-4474-B873-538096E7F6DB}">
+                <Component Id="cmp9283DB9C98BE7F77808CA5C7E0E5536D" Guid="{10235635-D4B5-41A8-B8B8-0821710D0FEA}">
                     <File Id="filB198E15141BB62CC815281C15B198B94" KeyPath="yes" Source="$(var.BestandsLocatie)\Images\view.png" />
                 </Component>
             </Directory>
@@ -506,15 +504,17 @@
             <ComponentRef Id="cmp9A9BB6349E8F5924B96550A8F23BE75E" />
             <ComponentRef Id="cmpA04E9A3D1B2C36E9BDFC4BF5DA4D71D4" />
             <ComponentRef Id="cmp56D39D2FE63572AEAC96BAB1FF3BB2D9" />
+			<!--
             <ComponentRef Id="cmp2DB4568992F4D5CD61A5E6A75D3C5836" />
-            <ComponentRef Id="cmp5A1D853C31755CB3F6FD7C3DF8B25D41" />
+			-->
             <ComponentRef Id="cmpF742CFD77AD1ECF252CE6E010611A626" />
             <ComponentRef Id="cmpD3494B20E472D86DB2FCDE81D94F38D4" />
             <ComponentRef Id="cmp0E564A9E6DC35AE2EC34169ED9290B6D" />
             <ComponentRef Id="cmpA467743F6CBE69533AE43E36E3D47F42" />
             <ComponentRef Id="cmp5048E90285D64D22583CC9001A9A90DB" />
-            <ComponentRef Id="cmp556130E34358A1510E662B67E5405124" />
+			<!--
             <ComponentRef Id="cmp10340E4A99A92EF4009EC6DA6632FAE2" />
+			-->
             <ComponentRef Id="cmp2B714EFEC87C12BA608CFC2499ABFA8E" />
             <ComponentRef Id="cmpD45FF048B68BF9EE7C3C1CE3A9916A11" />
             <ComponentRef Id="cmp62DD37905CB40994653EE7E2A58AF3C0" />

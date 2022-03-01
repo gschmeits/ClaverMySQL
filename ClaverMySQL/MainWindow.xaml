@@ -16,12 +16,10 @@
                   BorderThickness="0,0,0,0"
                   DockPanel.Dock="Top" VerticalContentAlignment="Center">
                 <MenuItem Header="Stamgegevens">
-                    <!--
                     <MenuItem Name="MenuItemBankafscriten"
                               Header="Inlezen bankafschriten"
                               Click="MenuItemBankafscriten_Click" />
                     <Separator  />
-                    -->
                     <MenuItem Name="mnu_Stamgegevens_Adressen"
                               Click="mnu_Stamgegevens_Adressen_Click"
                               Header="Adressen" />

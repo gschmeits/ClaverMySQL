@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
    xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" >
-  <Product Id="*" Name="Boekhouding" Language="1043" Version="2.0.0.0" Manufacturer="St. Petrus Claver" UpgradeCode="6aa663f5-57d5-4413-b336-552222d325ba">
+  <Product Id="*" Name="Boekhouding" Language="1043" Version="2.0.0.4" Manufacturer="St. Petrus Claver" UpgradeCode="6aa663f5-57d5-4413-b336-552222d325ba">
     <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Manufacturer="St. Petrus Claver" Description="Installeerd Boekhouding St. Petrus Claver 2016 - 2022" Keywords="Practice, Installer,MSI" Comments="(c) 2017 - 2022, G.H.M.H. Schmeits" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" />

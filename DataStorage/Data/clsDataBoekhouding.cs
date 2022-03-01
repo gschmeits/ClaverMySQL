@@ -311,5 +311,25 @@ namespace DataStorage.Data
             var sSQL = "SELECT * FROM tbl_Mutaties WHERE Dank = 1 and Bedankt = 0 and Bedrag >= " + bedrag;
             return sSQL;
         }
+
+        public static string controleBedankjesAantal()
+        {
+            var bedrag = Convert.ToDouble(Functions.sBedragBedankjes("ConfigData.xml"));
+            var sSQL = "SELECT COUNT(*) FROM tbl_Mutaties WHERE Dank = 1 and Bedankt = 0 and Bedrag >= " + bedrag;
+            return sSQL;
+        }
+
+        public static string HaalBetalingenAdres(string naamBetaler, string jaar)
+        {
+            var sSQL = "SELECT CONCAT(a.nummerkostenplaats,' ', b.CodeOmschrijving) AS Code, SUM(a.bedrag) AS Bedrag ";
+            sSQL += "FROM tbl_Mutaties AS a, ";
+            sSQL += "tbl_CodeTabel AS b ";
+            sSQL += "WHERE naambetaler > 0  ";
+            sSQL += "AND NaamBetaler = " + naamBetaler + " ";
+            sSQL += "AND YEAR(boekdatum) = " + jaar + " ";
+            sSQL += "AND a.NummerKostenplaats = b.IDCode ";
+            sSQL += "GROUP BY NummerKostenplaats";
+            return sSQL;
+        }
     }
 }

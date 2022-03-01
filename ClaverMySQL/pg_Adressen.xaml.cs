@@ -115,6 +115,7 @@ namespace ClaverMySQL
             {
                 var sSQL = clsDataAdressen.cmbAdresnummerSQL();
                 var dtA = GenericDataRead.GetData(sSQL);
+                Functions.LogMessage("Adressen Uitgangssituatie SQL: " + sSQL, 1);
                 cmbAdresnummer.ItemsSource = dtA.DefaultView;
                 cmbAdresnummer.DisplayMemberPath = "adresnummer";
                 cmbAdresnummer.SelectedValuePath = "adresnummer";

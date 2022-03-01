@@ -459,6 +459,9 @@ namespace ClaverMySQL
                 lblTeBoeken.Visibility = Visibility.Visible;
                 lblNogBoeken.Visibility = Visibility.Visible;
                 txtVolgnummer.Visibility = Visibility.Visible;
+
+                HalenBedankjes();
+
                 StackPanelAantalBedankjes.Visibility = Visibility.Visible;
             }
         }
@@ -805,8 +808,13 @@ namespace ClaverMySQL
                     // Controle bedankjes (geef melding als er meer dan het ingeselde aantal zijn)
                     sSQL = clsDataBoekhouding.controleBedankjes();
                     dtA = GenericDataRead.GetData(sSQL);
+
+                    var sSQL1 = clsDataBoekhouding.controleBedankjesAantal();
+                    var dtA1 = GenericDataRead.GetData(sSQL1);
+                    var tebedanken = dtA1.Rows[0][0].ToString();
+
                     var aantal = Convert.ToInt32(Functions.sAantalBedankjes("ConfigData.xml"));
-                    TextBlockAantalBedankjes.Text = aantal.ToString();
+                    TextBlockAantalBedankjes.Text = tebedanken + " / " + aantal.ToString();
 
                     if (dtA.Rows.Count >= aantal)
                     {
@@ -1450,9 +1458,6 @@ namespace ClaverMySQL
             cmbBankrekening.SelectedIndex = -1;
             cmbGiro.SelectedIndex = -1;
             cmbIBAN.SelectedIndex = 1;
-            lblNaamDetail.Content = "";
-            lblAdresDetail.Content = "";
-            lblPCPlaatsDetail.Content = "";
             Keyboard.Focus(cmbCode);
         }
         
@@ -1563,9 +1568,30 @@ namespace ClaverMySQL
             cmbPostcode.SelectedIndex = -1;
             TextBlockUitleg.Visibility = Visibility.Hidden;
             txtNaambetaler.Text = "";
-            lblNaamDetail.Content = "";
-            lblAdresDetail.Content = "";
-            lblPCPlaatsDetail.Content = "";
+            lbl01.Content = "";
+            lbl02.Content = "";
+            lbl03.Content = "";
+            lbl04.Content = "";
+            lbl06.Content = "";
+            lbl06.Content = "";
+            lbl07.Content = "";
+            lbl08.Content = "";
+            lbl09.Content = "";
+            lbl10.Content = "";
+            lbl11.Content = "";
+            lbl12.Content = "";
+            lblBedrag01.Content = "";
+            lblBedrag02.Content = "";
+            lblBedrag03.Content = "";
+            lblBedrag04.Content = "";
+            lblBedrag05.Content = "";
+            lblBedrag06.Content = "";
+            lblBedrag07.Content = "";
+            lblBedrag08.Content = "";
+            lblBedrag09.Content = "";
+            lblBedrag10.Content = "";
+            lblBedrag11.Content = "";
+            lblBedrag12.Content = "";
             chkDank.IsChecked = false;
             chkDank.Visibility = Visibility.Hidden;
             lblDank.Visibility = Visibility.Hidden;
@@ -1587,6 +1613,19 @@ namespace ClaverMySQL
             chkDank.IsEnabled = true;
         }
 
+        private void HalenBedankjes()
+        {
+            var sSQL = clsDataBoekhouding.controleBedankjes();
+            var dtA = GenericDataRead.GetData(sSQL);
+
+            var sSQL1 = clsDataBoekhouding.controleBedankjesAantal();
+            var dtA1 = GenericDataRead.GetData(sSQL1);
+            var tebedanken = dtA1.Rows[0][0].ToString();
+
+            var aantal = Convert.ToInt32(Functions.sAantalBedankjes("ConfigData.xml"));
+            TextBlockAantalBedankjes.Text = tebedanken + " / " + aantal.ToString();
+        }
+
         private void VulAdresGegevens(string sValue)
         {
             var iValue = Convert.ToInt64(sValue);
@@ -1597,13 +1636,123 @@ namespace ClaverMySQL
             cmbNaam.SelectedValue = iValue;
             cmbAdres.SelectedValue = iValue;
 
-            var sSQL = clsDataBoekhouding.HaalAdresDetails(sValue);
+            lbl01.Content = "";
+            lbl02.Content = "";
+            lbl03.Content = "";
+            lbl04.Content = "";
+            lbl05.Content = "";
+            lbl06.Content = "";
+            lbl07.Content = "";
+            lbl08.Content = "";
+            lbl09.Content = "";
+            lbl10.Content = "";
+            lbl11.Content = "";
+            lbl12.Content = "";
+            lblBedrag01.Content = "";
+            lblBedrag02.Content = "";
+            lblBedrag03.Content = "";
+            lblBedrag04.Content = "";
+            lblBedrag05.Content = "";
+            lblBedrag06.Content = "";
+            lblBedrag07.Content = "";
+            lblBedrag08.Content = "";
+            lblBedrag09.Content = "";
+            lblBedrag10.Content = "";
+            lblBedrag11.Content = "";
+            lblBedrag12.Content = "";
+
+            var sSQL = clsDataBoekhouding.HaalBetalingenAdres(sValue, cmbBoekjaar.Text);
             DataTable dtA = GenericDataRead.GetData(sSQL);
             if (dtA.Rows.Count > 0)
             {
-                lblNaamDetail.Content = dtA.Rows[0][0].ToString();
-                lblAdresDetail.Content = dtA.Rows[0][1].ToString();
-                lblPCPlaatsDetail.Content = dtA.Rows[0][2].ToString();
+                if (dtA.Rows.Count > 0)
+                {
+                    lbl01.Content = dtA.Rows[0]["code"].ToString();
+                    lblBedrag01.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[0]["bedrag"].ToString()));
+                }
+                if (dtA.Rows.Count > 1)
+                {
+                    lbl02.Content = dtA.Rows[1]["code"].ToString();
+                    lblBedrag02.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[1]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 2)
+                {
+                    lbl03.Content = dtA.Rows[2]["code"].ToString();
+                    lblBedrag03.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[2]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 3)
+                {
+                    lbl04.Content = dtA.Rows[3]["code"].ToString();
+                    lblBedrag04.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[3]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 4)
+                {
+                    lbl05.Content = dtA.Rows[4]["code"].ToString();
+                    lblBedrag05.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[4]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 5)
+                {
+                    lbl05.Content = dtA.Rows[5]["code"].ToString();
+                    lblBedrag06.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[5]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 6)
+                {
+                    lbl07.Content = dtA.Rows[6]["code"].ToString();
+                    lblBedrag07.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[6]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 7)
+                {
+                    lbl08.Content = dtA.Rows[7]["code"].ToString();
+                    lblBedrag08.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[7]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 8)
+                {
+                    lbl09.Content = dtA.Rows[8]["code"].ToString();
+                    lblBedrag09.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[8]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 9)
+                {
+                    lbl10.Content = dtA.Rows[9]["code"].ToString();
+                    lblBedrag10.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[9]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 10)
+                {
+                    lbl11.Content = dtA.Rows[10]["code"].ToString();
+                    lblBedrag11.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[10]["bedrag"].ToString()));
+                }
+
+                if (dtA.Rows.Count > 11)
+                {
+                    lbl12.Content = dtA.Rows[11]["code"].ToString();
+                    lblBedrag12.Content = string.Format("{0:C}",
+                        Convert.ToDecimal(dtA.Rows[11]["bedrag"].ToString()));
+                }
+            }
+
+            sSQL = clsDataBoekhouding.HaalAdresDetails(sValue);
+            dtA = GenericDataRead.GetData(sSQL);
+            if (dtA.Rows.Count > 0)
+            {
                 txtNaambetaler.Text = dtA.Rows[0][0].ToString();
                 this.grNaam.Visibility = Visibility.Visible;
                 if (dtA.Rows[0]["Dank"].ToString() == "1")

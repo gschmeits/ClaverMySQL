@@ -41,6 +41,7 @@
     <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -63,6 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BankafschriftenInlezen.cs" />
+    <Compile Include="FormaatMT940.cs" />
+    <Compile Include="Inlezen.cs" />
+    <Compile Include="Models\ComboGrootboekListB.cs" />
+    <Compile Include="Models\ComboSubcodeList452.cs" />
+    <Compile Include="Models\ComboSubcodeList450.cs" />
+    <Compile Include="Models\ComboSubcodeList333.cs" />
+    <Compile Include="Models\ComboSubcodeList330.cs" />
+    <Compile Include="Models\ComboSubcodeList.cs" />
+    <Compile Include="Models\InlezenAfschriften.cs" />
+    <Compile Include="Models\InlezenBankSaldi.cs" />
     <Compile Include="pg_AantalAbonnementen.xaml.cs">
       <DependentUpon>pg_AantalAbonnementen.xaml</DependentUpon>
     </Compile>
@@ -105,10 +117,17 @@
     <Compile Include="pg_SaldiAanpassen.xaml.cs">
       <DependentUpon>pg_SaldiAanpassen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PleaseWait.cs" />
     <Compile Include="Utils\CalenderBackground.cs" />
     <Compile Include="Utils\DatumZettenHalen.cs" />
     <Compile Include="Utils\ExtensionMethods.cs" />
     <Compile Include="Utils\PrintControle.cs" />
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -232,13 +251,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.ico" />

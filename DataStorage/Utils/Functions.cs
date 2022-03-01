@@ -335,9 +335,14 @@ namespace DataStorage
                 try
                 {
                     var xelement = XElement.Load("settings.xml");
+                    var teller = 0;
                     var elementVars = xelement.Elements();
                     foreach (var elementVar in elementVars)
+                    {
                         ValueList.Add(elementVar.Value);
+                        LogMessage("Settings.xml "+ teller +": " + elementVar.Value, 1);
+                        teller++;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -388,6 +393,10 @@ namespace DataStorage
                 password);
 
             General.SetDatabaseConnection(databaseConnection);
+            General.LogMessage(databaseConnection.Host, 1);
+            General.LogMessage(databaseConnection.Database, 1);
+            General.LogMessage(databaseConnection.User, 1);
+            General.LogMessage(databaseConnection.Port, 1);
         }
 
         public static string sHost(string xmlText)

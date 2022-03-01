@@ -1,11 +1,11 @@
 ﻿using System.Windows;
+using MySql.Data.MySqlClient;
 
 namespace DataStorage
 {
     using System;
     using System.Data;
     using System.Data.Common;
-    using MySql.Data.MySqlClient;
 
     public static class GenericDataAccess
     {
@@ -36,6 +36,7 @@ namespace DataStorage
             conn.ConnectionString = connectionString;
             var comm = conn.CreateCommand();
             comm.CommandType = CommandType.Text;
+            Functions.LogMessage("CreateCommandText(): " + connectionString,1);
             return comm;
         }
 
@@ -46,6 +47,7 @@ namespace DataStorage
             {
                 command.Connection.Open();
                 affectedRows = command.ExecuteNonQuery();
+                Functions.LogMessage("ExecuteNonQuery(): " + command, 1);
             }
             catch (MySqlException ex)
             {

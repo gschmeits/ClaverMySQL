@@ -54,7 +54,7 @@
                     HorizontalAlignment="Right"
                     Grid.Column="1"
                     VerticalAlignment="Center"
-                    Margin="0,0,50,0"
+                    Margin="0,0,30,0"
                     Name="StackPanelAantalBedankjes"
                     Visibility="Hidden">
             <Label Content="Aantal bedankjes:" FontWeight="Bold" />
@@ -66,13 +66,13 @@
         <!-- Einde Boekmaandselectie -->
 
         <!-- Bankselectie -->
-        <Border BorderThickness="1" 
-                BorderBrush="LightGray" Margin="15,0" 
+        <Border BorderThickness="1"
+                BorderBrush="LightGray" Margin="15,0"
                 CornerRadius="4" Grid.Row="1"
                 Grid.ColumnSpan="2" IsHitTestVisible="False" />
-        <DockPanel Name="docBankSel" 
-                   Margin="15,5,15,5" 
-                   Grid.Row="1" Grid.ColumnSpan="2" 
+        <DockPanel Name="docBankSel"
+                   Margin="15,5,15,5"
+                   Grid.Row="1" Grid.ColumnSpan="2"
                    Visibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
@@ -116,8 +116,8 @@
                     <Label x:Name="lblNogBoeken" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right"
                            Content="€ 0,00" Width="92" />
                 </StackPanel>
-                <ComboBox Name="cmbBank" Grid.Row="1" 
-                          Margin="5,0" 
+                <ComboBox Name="cmbBank" Grid.Row="1"
+                          Margin="5,0"
                           TabIndex="3" VerticalAlignment="Center"
                           VerticalContentAlignment="Center"
                           DropDownClosed="cmbBank_DropDownClosed"
@@ -237,17 +237,17 @@
                 </ComboBox>
                 <!-- Code dropdown options -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtBlad" Text="01" Width="40" 
+                    <TextBox Name="txtBlad" Text="01" Width="40"
                              Margin="5,0,0,0" Height="24"
-                             VerticalAlignment="Center" 
+                             VerticalAlignment="Center"
                              VerticalContentAlignment="Center" Visibility="Visible"
                              KeyDown="txtBlad_KeyDown" GotFocus="txtBlad_GotFocus" TabIndex="7" />
                     <Label Name="lblSubCode" Content="Subcode" HorizontalContentAlignment="Right" Width="60"
                            Margin="5,0,0,0" VerticalContentAlignment="Center" Visibility="Hidden" />
                     <!-- Subcode -->
-                    <ComboBox Name="cmbSubdoe" Width="150" 
+                    <ComboBox Name="cmbSubdoe" Width="150"
                               Margin="5" Height="24" Visibility="Hidden"
-                              VerticalContentAlignment="Center" 
+                              VerticalContentAlignment="Center"
                               DropDownClosed="cmbSubdoe_DropDownClosed"
                               LostFocus="cmbSubdoe_LostFocus" TabIndex="9" />
                     <!-- Einde Subcode -->
@@ -270,7 +270,7 @@
                          KeyDown="txtOpmerking_KeyDown" TabIndex="13" MaxLength="254" MaxLines="1" />
                 <CheckBox Name="chkDank" Grid.Row="6" Grid.Column="1" Margin="5,5,5,0" Height="24"
                           VerticalAlignment="Top" VerticalContentAlignment="Center" Visibility="Hidden"
-                           Click="chkDank_Click" TabIndex="14" IsEnabled="False" />
+                          Click="chkDank_Click" TabIndex="14" IsEnabled="False" />
                 <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Visibility="Hidden"
                            Name="TextBlockUitleg" Text="Donateur heeft aangegeven geen dank te willen."
                            Margin="32,10,0,32" />
@@ -290,7 +290,8 @@
                 </Button>
                 <Border BorderThickness="0" Name="brdAdres" BorderBrush="#FFEA2222" Margin="5,5,5,0" CornerRadius="4"
                         Grid.Column="3" Grid.RowSpan="6" Visibility="Hidden" />
-                <Grid Name="grNaam" Grid.Column="3" Grid.Row="0" Grid.RowSpan="6" Margin="10,10,10,5"
+                <Grid Name="grNaam" Grid.Column="3" Grid.Row="0" Grid.RowSpan="6" 
+                      Margin="10,5,10,0"
                       Visibility="Hidden">
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -386,19 +387,118 @@
                     </StackPanel>
                     <Border BorderThickness="1" BorderBrush="LightGray" Margin="5,5,5,5"
                             CornerRadius="4" Grid.Row="4" Grid.Column="3" Grid.RowSpan="4" />
-                    <StackPanel Grid.Row="4" Grid.RowSpan="4" Margin="25,15" Orientation="Vertical">
-                        <Label Name="lblNaamDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
-                        <Label Name="lblAdresDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
-                        <Label Name="lblPCPlaatsDetail" Content="" FontFamily="Segoe WP" FontSize="14" />
-                    </StackPanel>
+                    <Grid Grid.Row="4" Grid.RowSpan="4" Margin="10,5,10, 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="lbl01" Grid.Row="0" Content="d10" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Column="0"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag01" Grid.Row="0" Content="€ 120,00" 
+                               Grid.Column="1" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+                        <Label Name="lbl02"  Content="d11" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag02" Grid.Row="0" Content="€ 120,00" 
+                               Grid.Column="3" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right"/>
+                        <Label Name="lbl03"  Content="d12" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="0" Grid.Column="4"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag03" Grid.Row="0" Content="€ 120,00" 
+                               Grid.Column="5" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+
+                        <Label Name="lbl04" Grid.Row="1" Content="Echo:" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Column="0"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag04" Grid.Row="1" Content="€ 120,00" 
+                               Grid.Column="1" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+                        <Label Name="lbl05"  Content="ddd" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag05" Grid.Row="2" Content="€ 120,00" 
+                               Grid.Column="1" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+                        <Label Name="lbl06"  Content="ddd" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag06" Grid.Row="3" Content="€ 120,00" 
+                               Grid.Column="1" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+
+                        <Label Name="lbl07" Grid.Row="1" Content="Echo:" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Column="2"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag07" Grid.Row="1" Content="€ 120,00" 
+                               Grid.Column="3" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+                        <Label Name="lbl08"  Content="d5" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="2" Grid.Column="2"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag08" Grid.Row="2" Content="€ 120,00" 
+                               Grid.Column="3" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right"/>
+                        <Label Name="lbl09"  Content="d6" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="3" Grid.Column="2"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag09" Grid.Row="3" Content="€ 120,00" 
+                               Grid.Column="3" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+
+                        <Label Name="lbl10" Grid.Row="1" Content="Echo:" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Column="4"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag10" Grid.Row="1" Content="€ 120,00" 
+                               Grid.Column="5" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+                        <Label Name="lbl11"  Content="d8" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="2" Grid.Column="4"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag11" Grid.Row="2" Content="€ 120,00" 
+                               Grid.Column="5" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right"/>
+                        <Label Name="lbl12"  Content="d9" Width="75" Margin="10,0,0,0"
+                               HorizontalAlignment="Right" Grid.Row="3" Grid.Column="4"
+                               HorizontalContentAlignment="Right"
+                               FontWeight="Bold" FontFamily="Segoe WP" FontSize="12" />
+                        <Label Name="lblBedrag12" Grid.Row="3" Content="€ 120,00" 
+                               Grid.Column="5" FontFamily="Segoe WP"
+                               FontSize="12" HorizontalContentAlignment="Right" />
+
+                    </Grid>
                 </Grid>
             </Grid>
         </DockPanel>
         <!-- Einde Boeking -->
 
         <!-- Overzicht -->
-        <Border BorderThickness="1" BorderBrush="LightGray" 
-                Margin="15,5,15,5" 
+        <Border BorderThickness="1" BorderBrush="LightGray"
+                Margin="15,5,15,5"
                 CornerRadius="4" Grid.Row="4"
                 Grid.ColumnSpan="2">
             <DataGrid Name="dgBoekingen" Visibility="Hidden" UseLayoutRounding="False" CanUserReorderColumns="False"
@@ -408,7 +508,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Blad}" Header="Blad" />
                     <DataGridTextColumn Binding="{Binding Code}" Header="Code" Width="50" />
-                    <DataGridTextColumn Binding="{Binding Bedrag, StringFormat=\{0:c\}}" 
+                    <DataGridTextColumn Binding="{Binding Bedrag, StringFormat=\{0:c\}}"
                                         Header="Bedrag" Width="86">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
@@ -418,7 +518,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Binding="{Binding NaamBetaler}" 
+                    <DataGridTextColumn Binding="{Binding NaamBetaler}"
                                         Header="Nummer" Width="86">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">

@@ -38,9 +38,6 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,17 +61,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BankafschriftenInlezen.cs" />
-    <Compile Include="FormaatMT940.cs" />
-    <Compile Include="Inlezen.cs" />
-    <Compile Include="Models\ComboGrootboekListB.cs" />
-    <Compile Include="Models\ComboSubcodeList452.cs" />
-    <Compile Include="Models\ComboSubcodeList450.cs" />
-    <Compile Include="Models\ComboSubcodeList333.cs" />
-    <Compile Include="Models\ComboSubcodeList330.cs" />
-    <Compile Include="Models\ComboSubcodeList.cs" />
-    <Compile Include="Models\InlezenAfschriften.cs" />
-    <Compile Include="Models\InlezenBankSaldi.cs" />
     <Compile Include="pg_AantalAbonnementen.xaml.cs">
       <DependentUpon>pg_AantalAbonnementen.xaml</DependentUpon>
     </Compile>
@@ -96,38 +82,16 @@
     <Compile Include="pg_ControlePerKostenplaats.xaml.cs">
       <DependentUpon>pg_ControlePerKostenplaats.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pg_DankGlobaal.xaml.cs">
-      <DependentUpon>pg_DankGlobaal.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pg_DankIndividueel.xaml.cs">
-      <DependentUpon>pg_DankIndividueel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pg_Instellingen.xaml.cs">
-      <DependentUpon>pg_Instellingen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pg_Logo.xaml.cs">
       <DependentUpon>pg_Logo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pg_Niet Betalenden.xaml.cs">
-      <DependentUpon>pg_Niet Betalenden.xaml</DependentUpon>
     </Compile>
     <Compile Include="pg_PerPersoon.xaml.cs">
       <DependentUpon>pg_PerPersoon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pg_SaldiAanpassen.xaml.cs">
-      <DependentUpon>pg_SaldiAanpassen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PleaseWait.cs" />
     <Compile Include="Utils\CalenderBackground.cs" />
     <Compile Include="Utils\DatumZettenHalen.cs" />
     <Compile Include="Utils\ExtensionMethods.cs" />
     <Compile Include="Utils\PrintControle.cs" />
-    <Compile Include="WaitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WaitForm.designer.cs">
-      <DependentUpon>WaitForm.cs</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,19 +140,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pg_DankGlobaal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pg_DankIndividueel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="pg_Grootboek.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pg_Instellingen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,15 +148,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pg_Niet Betalenden.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="pg_PerPersoon.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pg_SaldiAanpassen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,18 +195,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WaitForm.resx">
-      <DependentUpon>WaitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.ico" />
@@ -271,10 +210,6 @@
     <ProjectReference Include="..\DataStorage\DataStorage.csproj">
       <Project>{b67dd2d5-6435-4f45-a669-eba309887bd1}</Project>
       <Name>DataStorage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WPF WYSIWYG HTML Editor\WPF WYSIWYG HTML Editor.csproj">
-      <Project>{13a55ae8-28ab-4ddb-9bc3-babfd7d64fea}</Project>
-      <Name>WPF WYSIWYG HTML Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

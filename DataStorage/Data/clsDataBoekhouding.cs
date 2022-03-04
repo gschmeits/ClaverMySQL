@@ -331,5 +331,6 @@ namespace DataStorage.Data
             sSQL += "GROUP BY NummerKostenplaats";
             return sSQL;
         }
+
     }
 }
